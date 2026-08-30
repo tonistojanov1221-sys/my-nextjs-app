@@ -201,23 +201,33 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProducts.map((product, index) => (
             <div key={index} className="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
-              <div className="relative h-48 w-full bg-slate-100">
+              {/* Image Container with clean background */}
+              <div className="relative h-52 w-full bg-slate-200 overflow-hidden">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover hover:scale-105 transition-transform duration-300"
                 />
-                <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-slate-800 text-xs font-semibold px-2.5 py-1 rounded-md shadow-sm">
-                  {product.category}
-                </span>
               </div>
+
+              {/* Card Content */}
               <div className="p-5 flex flex-col flex-grow">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="font-bold text-lg text-slate-900 leading-snug">{product.name}</h3>
-                  <span className="text-indigo-600 font-extrabold text-base">{product.price}</span>
+                {/* Category tag moved outside the image */}
+                <div className="mb-2">
+                  <span className="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold px-2.5 py-1 rounded-md">
+                    {product.category}
+                  </span>
                 </div>
+
+                <div className="flex justify-between items-start mb-2 gap-2">
+                  <h3 className="font-bold text-lg text-slate-900 leading-snug">{product.name}</h3>
+                  <span className="text-indigo-600 font-extrabold text-base whitespace-nowrap">{product.price}</span>
+                </div>
+
                 <p className="text-slate-600 text-sm mb-4 flex-grow">{product.description}</p>
+
                 <div className="flex items-center justify-between pt-4 border-t border-slate-100 mt-auto">
                   <div className="text-xs text-slate-500">
                     Score: <span className="font-bold text-slate-700">{product.score}</span>
