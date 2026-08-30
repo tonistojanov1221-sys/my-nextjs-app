@@ -58,7 +58,7 @@ const initialProducts: Product[] = [
     price: "$249.00",
     score: "9.2",
     description: "Максимална поддршка за грбот за долги часови работа.",
-    image: "https://images.unsplash.com/photo-1580481077494-e3299ac25694?w=500&auto=format&fit=crop&q=60"
+    image: "https://images.unsplash.com/photo-1505797149-43c0069ec96f?w=500&auto=format&fit=crop&q=60"
   },
   {
     name: "PlayStation 5 Slim Console",
@@ -98,7 +98,7 @@ const initialProducts: Product[] = [
     price: "$449.99",
     score: "9.6",
     description: "Напреден GPS паметен часовник за трчање со AMOLED екран.",
-    image: "https://images.unsplash.com/photo-1510017801934-a99b1f71d6b4?w=500&auto=format&fit=crop&q=60"
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&auto=format&fit=crop&q=60"
   },
   {
     name: "Dyson V15 Detect Cordless Vacuum",
@@ -200,7 +200,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProducts.map((product, index) => (
             <div key={index} className="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
-              {/* Image Container using standard img tag to prevent Next.js domain loading blocks */}
+              {/* Image Container */}
               <div className="relative h-52 w-full bg-slate-100 overflow-hidden">
                 <img
                   src={product.image}
@@ -211,7 +211,6 @@ export default function Home() {
 
               {/* Card Content */}
               <div className="p-5 flex flex-col flex-grow">
-                {/* Category tag clearly separated above the title */}
                 <div className="mb-2">
                   <span className="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold px-2.5 py-1 rounded-md">
                     {product.category}
