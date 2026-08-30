@@ -58,7 +58,7 @@ const initialProducts: Product[] = [
     price: "$249.00",
     score: "9.2",
     description: "Максимална поддршка за грбот за долги часови работа.",
-    image: "https://images.unsplash.com/photo-1580481077494-e3299ac25694?auto=format&fit=crop&w=600&q=80"
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "PlayStation 5 Slim Console",
@@ -98,7 +98,7 @@ const initialProducts: Product[] = [
     price: "$449.99",
     score: "9.6",
     description: "Напреден GPS паметен часовник за трчање со AMOLED екран.",
-    image: "https://images.unsplash.com/photo-1510017801934-a99b1f71d6b4?auto=format&fit=crop&w=600&q=80"
+    image: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Dyson V15 Detect Cordless Vacuum",
