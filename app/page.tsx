@@ -18,7 +18,7 @@ const initialProducts: Product[] = [
     price: "$398.00",
     score: "9.8",
     description: "Врвно поништување на бучава и исклучителен аудио квалитет.",
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop&q=60"
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Apple MacBook Air M3",
@@ -26,7 +26,7 @@ const initialProducts: Product[] = [
     price: "$1,099.00",
     score: "9.7",
     description: "Ултра брз лаптоп со целодневен век на батеријата.",
-    image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&auto=format&fit=crop&q=60"
+    image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Breville Barista Touch Espresso Machine",
@@ -34,7 +34,7 @@ const initialProducts: Product[] = [
     price: "$799.95",
     score: "9.5",
     description: "Совршено еспресо со автоматски екран на допир.",
-    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500&auto=format&fit=crop&q=60"
+    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Keychron K2 Wireless Keyboard",
@@ -42,7 +42,7 @@ const initialProducts: Product[] = [
     price: "$79.99",
     score: "9.3",
     description: "Механичка тастатура со идеално искуство за пишување.",
-    image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&auto=format&fit=crop&q=60"
+    image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Kindle Paperwhite (16 GB)",
@@ -50,7 +50,7 @@ const initialProducts: Product[] = [
     price: "$149.99",
     score: "9.6",
     description: "Водоотпорен е-читач со екран без отсјај.",
-    image: "https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?w=500&auto=format&fit=crop&q=60"
+    image: "https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Ergonomic Desk Chair",
@@ -58,7 +58,7 @@ const initialProducts: Product[] = [
     price: "$249.00",
     score: "9.2",
     description: "Максимална поддршка за грбот за долги часови работа.",
-    image: "https://images.unsplash.com/photo-1505797149-43c0069ec96f?w=500&auto=format&fit=crop&q=60"
+    image: "https://images.unsplash.com/photo-1580481077494-e3299ac25694?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "PlayStation 5 Slim Console",
@@ -66,7 +66,7 @@ const initialProducts: Product[] = [
     price: "$499.00",
     score: "9.9",
     description: "Врвно гејминг искуство со ултра брз SSD диск.",
-    image: "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=500&auto=format&fit=crop&q=60"
+    image: "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Logitech MX Master 3S Mouse",
@@ -74,7 +74,7 @@ const initialProducts: Product[] = [
     price: "$99.99",
     score: "9.8",
     description: "Прецизно безжично глувче за врвна продуктивност.",
-    image: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&auto=format&fit=crop&q=60"
+    image: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Ninja Air Fryer Pro",
@@ -82,7 +82,7 @@ const initialProducts: Product[] = [
     price: "$119.99",
     score: "9.4",
     description: "Здраво готвење со циркулација на врел воздух.",
-    image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=500&auto=format&fit=crop&q=60"
+    image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Apple iPhone 15 Pro Max",
@@ -90,7 +90,7 @@ const initialProducts: Product[] = [
     price: "$1,199.00",
     score: "9.8",
     description: "Титаниумско куќиште и врвен систем на камери.",
-    image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=500&auto=format&fit=crop&q=60"
+    image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Garmin Forerunner 265",
@@ -98,7 +98,7 @@ const initialProducts: Product[] = [
     price: "$449.99",
     score: "9.6",
     description: "Напреден GPS паметен часовник за трчање со AMOLED екран.",
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&auto=format&fit=crop&q=60"
+    image: "https://images.unsplash.com/photo-1510017801934-a99b1f71d6b4?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Dyson V15 Detect Cordless Vacuum",
@@ -106,7 +106,7 @@ const initialProducts: Product[] = [
     price: "$749.99",
     score: "9.7",
     description: "Моќен безжичен правосмукач со ласерско откривање на микро-прашина.",
-    image: "https://images.unsplash.com/photo-1558317374-067fb5f30001?w=500&auto=format&fit=crop&q=60"
+    image: "https://images.unsplash.com/photo-1558317374-067fb5f30001?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Sonos Era 300 Smart Speaker",
@@ -114,7 +114,7 @@ const initialProducts: Product[] = [
     price: "$449.00",
     score: "9.5",
     description: "Просторен звук со поддршка за Dolby Atmos за врвно аудио искуство.",
-    image: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=500&auto=format&fit=crop&q=60"
+    image: "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Bowflex SelectTech 552 Dumbbells",
@@ -122,7 +122,7 @@ const initialProducts: Product[] = [
     price: "$399.00",
     score: "9.8",
     description: "Прилагодливи тегови кои заменуваат 15 пара тегови во еден сет.",
-    image: "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=500&auto=format&fit=crop&q=60"
+    image: "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=600&q=80"
   }
 ];
 
@@ -205,6 +205,7 @@ export default function Home() {
                 <img
                   src={product.image}
                   alt={product.name}
+                  loading="lazy"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
