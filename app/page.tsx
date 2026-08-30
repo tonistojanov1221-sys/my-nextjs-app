@@ -74,6 +74,46 @@ const INITIAL_PRODUCTS: Product[] = [
     image: "https://images.unsplash.com/photo-1580481072645-022f9a6d83d0?w=500&q=80",
     query: "Ergonomic Desk Chair",
   },
+  {
+    id: "7",
+    title: "PlayStation 5 Slim Console",
+    category: "Gaming",
+    price: "$499.00",
+    score: 9.9,
+    description: "Врвно гејминг искуство со ултра брз SSD диск.",
+    image: "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=500&q=80",
+    query: "PlayStation 5 Slim",
+  },
+  {
+    id: "8",
+    title: "Logitech MX Master 3S Mouse",
+    category: "Workspace",
+    price: "$99.99",
+    score: 9.8,
+    description: "Прецизно безжично глувче за врвна продуктивност.",
+    image: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&q=80",
+    query: "Logitech MX Master 3S",
+  },
+  {
+    id: "9",
+    title: "Ninja Air Fryer Pro",
+    category: "Kitchen",
+    price: "$119.99",
+    score: 9.4,
+    description: "Здраво готвење со циркулација на врел воздух.",
+    image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=500&q=80",
+    query: "Ninja Air Fryer",
+  },
+  {
+    id: "10",
+    title: "Apple iPhone 15 Pro Max",
+    category: "Mobile",
+    price: "$1,199.00",
+    score: 9.8,
+    description: "Титаниумско куќиште и врвен систем на камери.",
+    image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=500&q=80",
+    query: "iPhone 15 Pro Max",
+  }
 ];
 
 export default function Home() {
@@ -86,7 +126,7 @@ export default function Home() {
     return `https://www.amazon.com/s?k=${encodeURIComponent(query)}&tag=${STORE_ID}`;
   };
 
-  const categories = ["All", "Tech", "Kitchen", "Workspace"];
+  const categories = ["All", "Tech", "Kitchen", "Workspace", "Gaming", "Mobile"];
 
   const filteredProducts = INITIAL_PRODUCTS.filter((product) => {
     const matchesSearch =
