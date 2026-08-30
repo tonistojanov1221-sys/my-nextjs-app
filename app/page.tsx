@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 
 interface Product {
   name: string;
@@ -201,20 +200,18 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProducts.map((product, index) => (
             <div key={index} className="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
-              {/* Image Container with clean background */}
-              <div className="relative h-52 w-full bg-slate-200 overflow-hidden">
-                <Image
+              {/* Image Container using standard img tag to prevent Next.js domain loading blocks */}
+              <div className="relative h-52 w-full bg-slate-100 overflow-hidden">
+                <img
                   src={product.image}
                   alt={product.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
 
               {/* Card Content */}
               <div className="p-5 flex flex-col flex-grow">
-                {/* Category tag moved outside the image */}
+                {/* Category tag clearly separated above the title */}
                 <div className="mb-2">
                   <span className="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold px-2.5 py-1 rounded-md">
                     {product.category}
