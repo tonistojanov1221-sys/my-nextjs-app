@@ -82,7 +82,6 @@ export default function Home() {
 
   const STORE_ID = "tonistojanov2-20";
 
-  // Автоматско генерирање на Amazon Affiliate URL за кој било производ
   const createAmazonUrl = (query: string) => {
     return `https://www.amazon.com/s?k=${encodeURIComponent(query)}&tag=${STORE_ID}`;
   };
@@ -100,7 +99,6 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900 pb-16">
-      {/* Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
@@ -113,7 +111,6 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero */}
       <section className="max-w-4xl mx-auto px-4 pt-12 pb-8 text-center">
         <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
           Паметни препораки за производи во живо
@@ -122,7 +119,6 @@ export default function Home() {
           Пребарај било кој производ — системот автоматски генерира директни Amazon препораки со твојата партнерска заштита.
         </p>
 
-        {/* Dynamic Search & Filter */}
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
           <input
             type="text"
@@ -143,7 +139,6 @@ export default function Home() {
           )}
         </div>
 
-        {/* Categories */}
         <div className="flex justify-center gap-2 flex-wrap">
           {categories.map((cat) => (
             <button
@@ -161,7 +156,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Product Grid */}
       <section className="max-w-6xl mx-auto px-4 py-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProducts.map((product) => (
@@ -206,7 +200,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="max-w-4xl mx-auto px-4 mt-16 text-center text-xs text-slate-500 border-t border-slate-200 pt-8">
         <p className="mb-2">
           SmartPick AI е учесник во Amazon Services LLC Associates Program. Сите купувања одат директно преку Amazon со заштитен Affiliate ID ({STORE_ID}).
