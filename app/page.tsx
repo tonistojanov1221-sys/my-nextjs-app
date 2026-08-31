@@ -131,6 +131,14 @@ const initialProducts: Product[] = [
     score: "9.8",
     description: "Компактен мини дрон со 4K камера и напредно избегнување пречки.",
     image: "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Apple Watch Series 10",
+    category: "Tech",
+    price: "$399.00",
+    score: "9.7",
+    description: "Најтенок и најнапреден паметен часовник од Apple со поголем екран.",
+    image: "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?auto=format&fit=crop&w=600&q=80"
   }
 ];
 
