@@ -17,7 +17,7 @@ const initialProducts: Product[] = [
     category: "Tech",
     price: "$398.00",
     score: "9.8",
-    description: "Врвно поништување на бучава и исклучителен аудио квалитет.",
+    description: "Industry-leading noise canceling with exceptional audio quality.",
     image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80"
   },
   {
@@ -25,7 +25,7 @@ const initialProducts: Product[] = [
     category: "Tech",
     price: "$1,099.00",
     score: "9.7",
-    description: "Ултра брз лаптоп со целодневен век на батеријата.",
+    description: "Ultra-fast laptop with all-day battery life.",
     image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80"
   },
   {
@@ -33,7 +33,7 @@ const initialProducts: Product[] = [
     category: "Kitchen",
     price: "$799.95",
     score: "9.5",
-    description: "Совршено еспресо со автоматски екран на допир.",
+    description: "Perfect espresso with an automated touch screen display.",
     image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80"
   },
   {
@@ -41,7 +41,7 @@ const initialProducts: Product[] = [
     category: "Workspace",
     price: "$79.99",
     score: "9.3",
-    description: "Механичка тастатура со идеално искуство за пишување.",
+    description: "Mechanical keyboard with an ideal typing experience.",
     image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80"
   },
   {
@@ -49,7 +49,7 @@ const initialProducts: Product[] = [
     category: "Tech",
     price: "$149.99",
     score: "9.6",
-    description: "Водоотпорен е-читач со екран без отсјај.",
+    description: "Waterproof e-reader with a glare-free display.",
     image: "https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?auto=format&fit=crop&w=600&q=80"
   },
   {
@@ -57,7 +57,7 @@ const initialProducts: Product[] = [
     category: "Workspace",
     price: "$249.00",
     score: "9.2",
-    description: "Максимална поддршка за грбот за долги часови работа.",
+    description: "Maximum back support for long hours of work.",
     image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80"
   },
   {
@@ -65,7 +65,7 @@ const initialProducts: Product[] = [
     category: "Gaming",
     price: "$499.00",
     score: "9.9",
-    description: "Врвно гејминг искуство со ултра брз SSD диск.",
+    description: "Ultimate gaming experience with an ultra-high speed SSD.",
     image: "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=600&q=80"
   },
   {
@@ -73,7 +73,7 @@ const initialProducts: Product[] = [
     category: "Workspace",
     price: "$99.99",
     score: "9.8",
-    description: "Прецизно безжично глувче за врвна продуктивност.",
+    description: "Precise wireless mouse for ultimate productivity.",
     image: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=600&q=80"
   },
   {
@@ -81,7 +81,7 @@ const initialProducts: Product[] = [
     category: "Kitchen",
     price: "$119.99",
     score: "9.4",
-    description: "Здраво готвење со циркулација на врел воздух.",
+    description: "Healthy cooking with rapid air circulation.",
     image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=600&q=80"
   },
   {
@@ -89,7 +89,7 @@ const initialProducts: Product[] = [
     category: "Mobile",
     price: "$1,199.00",
     score: "9.8",
-    description: "Титаниумско куќиште и врвен систем на камери.",
+    description: "Titanium design with a powerful pro camera system.",
     image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80"
   },
   {
@@ -97,7 +97,7 @@ const initialProducts: Product[] = [
     category: "Sports",
     price: "$449.99",
     score: "9.6",
-    description: "Напреден GPS паметен часовник за трчање со AMOLED екран.",
+    description: "Advanced GPS running smartwatch with a vibrant AMOLED display.",
     image: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=600&q=80"
   },
   {
@@ -105,7 +105,7 @@ const initialProducts: Product[] = [
     category: "Home",
     price: "$749.99",
     score: "9.7",
-    description: "Моќен безжичен правосмукач со ласерско откривање на микро-прашина.",
+    description: "Powerful cordless vacuum with laser detection for microscopic dust.",
     image: "https://images.unsplash.com/photo-1558317374-067fb5f30001?auto=format&fit=crop&w=600&q=80"
   },
   {
@@ -113,7 +113,7 @@ const initialProducts: Product[] = [
     category: "Audio",
     price: "$449.00",
     score: "9.5",
-    description: "Просторен звук со поддршка за Dolby Atmos за врвно аудио искуство.",
+    description: "Spacious sound with Dolby Atmos support for an immersive audio experience.",
     image: "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=600&q=80"
   },
   {
@@ -121,7 +121,7 @@ const initialProducts: Product[] = [
     category: "Sports",
     price: "$399.00",
     score: "9.8",
-    description: "Прилагодливи тегови кои заменуваат 15 пара тегови во еден сет.",
+    description: "Adjustable dumbbells that replace 15 sets of weights in one compact design.",
     image: "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=600&q=80"
   }
 ];
@@ -161,10 +161,10 @@ export default function Home() {
       <main className="max-w-6xl mx-auto px-4 py-12">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <h2 className="text-4xl font-extrabold tracking-tight text-slate-900 mb-3">
-            Паметни препораки за производи во живо
+            Smart live product recommendations
           </h2>
           <p className="text-slate-600 text-base">
-            Пребарај било кој производ — системот автоматски генерира директни Amazon препораки со твојата партнерска заштита.
+            Search for any product — the system automatically generates direct Amazon recommendations with your affiliate protection.
           </p>
         </div>
 
@@ -172,7 +172,7 @@ export default function Home() {
         <div className="max-w-xl mx-auto mb-8">
           <input
             type="text"
-            placeholder="Напиши било кој производ (на пр. Laptop, Smartwatch, Blender)..."
+            placeholder="Type any product (e.g., Laptop, Smartwatch, Blender)..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full px-5 py-4 rounded-xl border border-slate-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-slate-800 placeholder-slate-400 bg-white"
@@ -235,7 +235,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold px-4 py-2 rounded-lg transition-colors shadow-sm"
                   >
-                    Купи на Amazon (Affiliate)
+                    Buy on Amazon (Affiliate)
                   </a>
                 </div>
               </div>
@@ -245,15 +245,15 @@ export default function Home() {
 
         {filteredProducts.length === 0 && (
           <div className="text-center py-16 text-slate-500">
-            Нема пронајдено производи што одговараат на вашето пребарување.
+            No products found matching your search.
           </div>
         )}
       </main>
 
       {/* Footer */}
       <footer className="max-w-6xl mx-auto px-4 py-8 mt-16 border-t border-slate-200 text-center text-xs text-slate-500 space-y-2">
-        <p>SmartPick AI е учесник во Amazon Services LLC Associates Program. Сите купувања одат директно преку Amazon со заштитен Affiliate ID (<span className="font-mono font-bold text-slate-700">tonistojanov2-20</span>).</p>
-        <p>© 2026 SmartPick AI. Сите права се задржани.</p>
+        <p>SmartPick AI is a participant in the Amazon Services LLC Associates Program. All purchases go directly through Amazon with protected Affiliate ID (<span className="font-mono font-bold text-slate-700">tonistojanov2-20</span>).</p>
+        <p>© 2026 SmartPick AI. All rights reserved.</p>
       </footer>
     </div>
   );
