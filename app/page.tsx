@@ -163,10 +163,34 @@ const initialProducts: Product[] = [
     score: "9.7",
     description: "Qi2 certified wireless portable charger with a built-in foldable kickstand.",
     image: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Amazon Echo Show 5",
+    category: "Smart Home",
+    price: "$89.99",
+    score: "9.4",
+    description: "Compact smart display with Alexa and clear sound to manage your day.",
+    image: "https://images.unsplash.com/photo-1543512214-318c7553f230?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Philips Hue White & Color LED Bulb Starter Kit",
+    category: "Smart Home",
+    price: "$199.99",
+    score: "9.6",
+    description: "Smart lighting system with millions of colors controllable via app or voice.",
+    image: "https://images.unsplash.com/photo-1550985616-11610a51e59f?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Fitbit Charge 6 Advanced Fitness Tracker",
+    category: "Fitness",
+    price: "$159.95",
+    score: "9.5",
+    description: "Advanced health tracker with built-in GPS, Google apps, and heart rate monitoring.",
+    image: "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?auto=format&fit=crop&w=600&q=80"
   }
 ];
 
-const categories = ["All", "Tech", "Kitchen", "Workspace", "Gaming", "Mobile", "Sports", "Home", "Audio", "Drones", "Trending"];
+const categories = ["All", "Tech", "Kitchen", "Workspace", "Gaming", "Mobile", "Sports", "Home", "Audio", "Drones", "Trending", "Smart Home", "Fitness"];
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("All");
