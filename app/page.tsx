@@ -178,7 +178,7 @@ const initialProducts: Product[] = [
     price: "$199.99",
     score: "9.6",
     description: "Smart lighting system with millions of colors controllable via app or voice.",
-    image: "https://images.unsplash.com/photo-1550985616-11610a51e59f?auto=format&fit=crop&w=600&q=80"
+    image: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Fitbit Charge 6 Advanced Fitness Tracker",
