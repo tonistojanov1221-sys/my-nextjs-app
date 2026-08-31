@@ -162,7 +162,7 @@ const initialProducts: Product[] = [
     price: "$89.99",
     score: "9.7",
     description: "Qi2 certified wireless portable charger with a built-in foldable kickstand.",
-    image: "https://images.unsplash.com/photo-1609592424104-97d405230a6e?auto=format&fit=crop&w=600&q=80"
+    image: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=600&q=80"
   }
 ];
 
