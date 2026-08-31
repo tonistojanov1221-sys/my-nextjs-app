@@ -123,10 +123,18 @@ const initialProducts: Product[] = [
     score: "9.8",
     description: "Adjustable dumbbells that replace 15 sets of weights in one compact design.",
     image: "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "DJI Mini 4 Pro Drone",
+    category: "Drones",
+    price: "$759.00",
+    score: "9.8",
+    description: "Компактен мини дрон со 4K камера и напредно избегнување пречки.",
+    image: "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&w=600&q=80"
   }
 ];
 
-const categories = ["All", "Tech", "Kitchen", "Workspace", "Gaming", "Mobile", "Sports", "Home", "Audio"];
+const categories = ["All", "Tech", "Kitchen", "Workspace", "Gaming", "Mobile", "Sports", "Home", "Audio", "Drones"];
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("All");
