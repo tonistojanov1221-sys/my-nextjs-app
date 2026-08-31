@@ -139,10 +139,34 @@ const initialProducts: Product[] = [
     score: "9.7",
     description: "Најтенок и најнапреден паметен часовник од Apple со поголем екран.",
     image: "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Nintendo Switch OLED Model",
+    category: "Gaming",
+    price: "$349.99",
+    score: "9.6",
+    description: "Vibrant 7-inch OLED screen gaming console for home and portable play.",
+    image: "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Instant Pot Pro 10-in-1 Pressure Cooker",
+    category: "Kitchen",
+    price: "$149.99",
+    score: "9.5",
+    description: "Multi-use programmable pressure cooker, slow cooker, and air fryer combo.",
+    image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Anker MagGo Power Bank",
+    category: "Trending",
+    price: "$89.99",
+    score: "9.7",
+    description: "Qi2 certified wireless portable charger with a built-in foldable kickstand.",
+    image: "https://images.unsplash.com/photo-1609592424104-97d405230a6e?auto=format&fit=crop&w=600&q=80"
   }
 ];
 
-const categories = ["All", "Tech", "Kitchen", "Workspace", "Gaming", "Mobile", "Sports", "Home", "Audio", "Drones"];
+const categories = ["All", "Tech", "Kitchen", "Workspace", "Gaming", "Mobile", "Sports", "Home", "Audio", "Drones", "Trending"];
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("All");
