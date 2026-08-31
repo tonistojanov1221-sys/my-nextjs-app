@@ -129,7 +129,7 @@ const initialProducts: Product[] = [
     category: "Drones",
     price: "$759.00",
     score: "9.8",
-    description: "Компактен мини дрон со 4K камера и напредно избегнување пречки.",
+    description: "Advanced mini drone with 4K camera and omnidirectional obstacle sensing.",
     image: "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&w=600&q=80"
   },
   {
