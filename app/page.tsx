@@ -268,7 +268,6 @@ const initialProducts: Product[] = [
     description: "Anti-gravity suspension multi-day backpacking pack for ultimate load comfort.",
     image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80"
   },
-  // Нови производи
   {
     name: "JBL Flip 6 Portable Bluetooth Speaker",
     category: "Audio",
@@ -316,6 +315,55 @@ const initialProducts: Product[] = [
     score: "9.7",
     description: "High-speed multi-device charging station for laptops, tablets, and phones simultaneously.",
     image: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=600&q=80"
+  },
+  // Сосема нови производи
+  {
+    name: "Ring Video Doorbell Pro 2",
+    category: "Smart Home",
+    price: "$249.99",
+    score: "9.7",
+    description: "Advanced HD video doorbell with Head-to-Head field of view and 3D motion detection.",
+    image: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Logitech G Pro X Superlight Wireless Gaming Mouse",
+    category: "Gaming",
+    price: "$159.99",
+    score: "9.9",
+    description: "Meticulously engineered ultra-lightweight competitive gaming mouse.",
+    image: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Samsung Galaxy Watch 6",
+    category: "Fitness",
+    price: "$299.99",
+    score: "9.6",
+    description: "Advanced fitness coaching, sleep tracking, and a larger crystal-clear display.",
+    image: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Le Creuset Enameled Cast Iron Dutch Oven",
+    category: "Kitchen",
+    price: "$420.00",
+    score: "9.9",
+    description: "World-class culinary icon for superior heat distribution and retention.",
+    image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Anker Soundcore Space Q45 Wireless Headphones",
+    category: "Audio",
+    price: "$149.99",
+    score: "9.5",
+    description: "Upgraded active noise canceling system with 50-hour playtime.",
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Ember Temperature Control Smart Mug 2",
+    category: "Kitchen",
+    price: "$149.95",
+    score: "9.6",
+    description: "Keep your hot coffee or tea at the exact preferred temperature from your phone.",
+    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80"
   }
 ];
 
