@@ -162,7 +162,7 @@ const initialProducts: Product[] = [
     price: "$89.99",
     score: "9.7",
     description: "Qi2 certified wireless portable charger with a built-in foldable kickstand.",
-    image: "https://images.unsplash.com/photo-1609592424072-d5952fcf4eb3?auto=format&fit=crop&w=600&q=80"
+    image: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Amazon Echo Show 5",
@@ -498,7 +498,7 @@ const initialProducts: Product[] = [
     price: "$349.95",
     score: "9.8",
     description: "Professional-grade high-performance variable speed food blender for smoothies and hot soups.",
-    image: "https://images.unsplash.com/photo-1570222094114-d074f7e9455c?auto=format&fit=crop&w=600&q=80"
+    image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Nanoleaf Shapes Triangles Starter Kit",
