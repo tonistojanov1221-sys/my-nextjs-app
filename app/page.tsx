@@ -93,6 +93,14 @@ const initialProducts: Product[] = [
     image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80"
   },
   {
+    name: "Omron 10 Series Wireless Blood Pressure Monitor",
+    category: "Medical Supplies",
+    price: "$99.99",
+    score: "9.7",
+    description: "Advanced accuracy home blood pressure monitor with Bluetooth connectivity and dual-user storage.",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80"
+  },
+  {
     name: "Garmin Forerunner 265",
     category: "Sports",
     price: "$449.99",
@@ -526,7 +534,7 @@ const initialProducts: Product[] = [
   }
 ];
 
-const categories = ["All", "Tech", "Kitchen", "Workspace", "Gaming", "Mobile", "Sports", "Home", "Audio", "Drones", "Trending", "Smart Home", "Fitness", "Automotive", "Outdoor"];
+const categories = ["All", "Tech", "Kitchen", "Workspace", "Gaming", "Mobile", "Medical Supplies", "Sports", "Home", "Audio", "Drones", "Trending", "Smart Home", "Fitness", "Automotive", "Outdoor"];
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -541,7 +549,7 @@ export default function Home() {
 
   const getAmazonLink = (productName: string) => {
     const query = encodeURIComponent(productName);
-    return `https://www.amazon.com/s?k=${query}&tag=tonistojanov2-20`;
+    return `https://aax-us-east-retail-direct.amazon.com/x/c/JHJ_pGXmzKsP4b8Tkq9Vs7UAAAGgXkW0_wEAAAH2AQBvbm9fdHhuX2JpZDcgICBvbm9fdHhuX2ltcDIgICDabtah/clv1c_ek-ww3fWVdbWDfVq9CX3wp79Prs9kJawfi3anI_R7i81olPSHm_snpIjxWqSGFKAL8OEgixADFXfn9yQb_Kp_YywsusSVOzMBowiNG7-ei50O8kd6KbXMSB4o7_yRwrleK-MesiMN2vSx5AAjhtn_M6LYNydFFv_nu6Qo4eCfObHk7whzQlN_mals0D3kr9i6NRKRmmI8adLlj2OVQ3ovkzFj3Kp7F6jg63M9003xfyyp-YI7mCc0oteufjs5pc74HF4aYZgvaNSj783ew9G0PV-OcIoFkS-OJp28LmBQDixQVvHyMHlGkYcSc9ryQFgXNY1EMVZHPARBao89vealVtRS0YU6tosJMFPVF6AZ-F5nSWxwTpDCu0V5lrjk-HjIMxWvc70u3na4D8d207Xdhyy3_yPq03aRE8uuJoWSSl1jkIywzZ_U4hBAsqvlwX7KYN-deeMmurIBIt8zZmTFmIcOvU79a4ZF-0Q8qYCXe8NUTH2O3zqM3qRE0n9cYN-0ldiDiWXghlt6Vd1DG7fyOg9qtQXclhsRhDmL2raAcz9yG6q8GVbjdpWOtotntrTn9TBrB_bOCB94jcoK7jUOH5GTlWKoIptPh-ThbaDq3M1r9NeWFq8erpJOF5avHJDCtV2T9MubCRqyjm42DMsayVeX0c6hik0CLuBaHLFqoliBS2pmbxgaGgNtNcKxJ1JKUtKmnlnmrsNsSWoaAsxbO685MkB7M2cLcf6Ekd8FksWqyauD4g8YDBRKeJYGGywSwY_KXm5ffGCClRA7SJNEqwdMzyunKbQPYuVe5RlsuYO7kbkAGlS2r9DhQez27iK6R89bUQbgecxkHEKrh5fTcasr0VUJZMoC_0IKHYnw5WlSE7cgCV_KF_S0jDE_BwhpAuqyn2Ux-ufWQvg9T-CxixuHbtC8u9EXLaKAR9MgFXB6KkzGxcI1J1IATV6bZWm2w4RepvP3KjAVqxHZIf1zwmfdWeWjHcjp_X2I_wYyUaruNV4vdw660KPo5xtQK17hoR7mAbYXzbDgzs/https://www.amazon.com/gp/aw/d/B0FQFW3YRM/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=693a2191ff004eb8a356fee8a44e7700&hsa_cr_id=0&qid=1788288021&sr=1-1-9e67e56a-6f64-441f-a281-df67fc737124&i=aps&aref=wvg1zTSVgs&ref_=sbx_s_sparkle_sbtcd_asin_0_bkgd&pd_rd_w=LpAzC&content-id=amzn1.sym.8de9b3d5-f5c5-40e9-9b39-d65f08d6ea68%3Aamzn1.sym.8de9b3d5-f5c5-40e9-9b39-d65f08d6ea68&pf_rd_p=8de9b3d5-f5c5-40e9-9b39-d65f08d6ea68&pf_rd_r=4SMANF00N37XDB4EMV53&pd_rd_wg=CTr5K&pd_rd_r=6b35efa5-f6af-46b9-807f-7014d52b08222s?k=${query}&tag=tonistojanov2-20`;
   };
 
   return (
