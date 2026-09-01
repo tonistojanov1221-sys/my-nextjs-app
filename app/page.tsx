@@ -187,10 +187,91 @@ const initialProducts: Product[] = [
     score: "9.5",
     description: "Advanced health tracker with built-in GPS, Google apps, and heart rate monitoring.",
     image: "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?auto=format&fit=crop&w=600&q=80"
+  },
+  // --- 10 NEW PRODUCTS ---
+  {
+    name: "Garmin Dash Cam 67W",
+    category: "Automotive",
+    price: "$259.99",
+    score: "9.7",
+    description: "Compact dash camera with wide 180-degree field of view and voice control.",
+    image: "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "ThisWorx Portable Car Vacuum Cleaner",
+    category: "Automotive",
+    price: "$39.99",
+    score: "9.1",
+    description: "High-power 12V mini handheld vacuum designed specifically for cars.",
+    image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "NOCO Boost Plus GB40 Jump Starter",
+    category: "Automotive",
+    price: "$99.95",
+    score: "9.9",
+    description: "Ultra-safe 1000A 12V lithium portable car battery jump starter box.",
+    image: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Meguiar's Complete Car Care Kit",
+    category: "Automotive",
+    price: "$49.99",
+    score: "9.5",
+    description: "Comprehensive 5-piece surface preparation and detailing cleaning kit.",
+    image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Anker Roav Smart Car Charger",
+    category: "Automotive",
+    price: "$25.99",
+    score: "9.3",
+    description: "Dual USB car charger with PowerIQ technology for fast device charging on the go.",
+    image: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Coleman Sundome 4-Person Tent",
+    category: "Outdoor",
+    price: "$99.99",
+    score: "9.6",
+    description: "Weather-resistant outdoor camping dome tent with weatherTec system.",
+    image: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Yeti Hopper Flip 12 Portable Cooler",
+    category: "Outdoor",
+    price: "$250.00",
+    score: "9.8",
+    description: "Leak-proof, tough-as-nails soft cooler to keep drinks icy cold anywhere.",
+    image: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Hydro Flask Wide Mouth Bottle",
+    category: "Outdoor",
+    price: "$44.95",
+    score: "9.7",
+    description: "Insulated stainless steel water bottle keeping liquids cold for up to 24 hours.",
+    image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Black Diamond Storm 400 Headlamp",
+    category: "Outdoor",
+    price: "$49.95",
+    score: "9.5",
+    description: "Waterproof high-performance headlamp for night hiking, climbing, and camping.",
+    image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Osprey Atmos AG 65 Backpack",
+    category: "Outdoor",
+    price: "$320.00",
+    score: "9.9",
+    description: "Anti-gravity suspension multi-day backpacking pack for ultimate load comfort.",
+    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80"
   }
 ];
 
-const categories = ["All", "Tech", "Kitchen", "Workspace", "Gaming", "Mobile", "Sports", "Home", "Audio", "Drones", "Trending", "Smart Home", "Fitness"];
+const categories = ["All", "Tech", "Kitchen", "Workspace", "Gaming", "Mobile", "Sports", "Home", "Audio", "Drones", "Trending", "Smart Home", "Fitness", "Automotive", "Outdoor"];
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("All");
