@@ -210,7 +210,7 @@ const initialProducts: Product[] = [
     price: "$99.95",
     score: "9.9",
     description: "Ultra-safe 1000A 12V lithium portable car battery jump starter box.",
-    image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=600&q=80"
+    image: "https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Meguiar's Complete Car Care Kit",
