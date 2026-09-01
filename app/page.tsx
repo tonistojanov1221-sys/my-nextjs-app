@@ -450,7 +450,7 @@ const initialProducts: Product[] = [
     price: "$429.00",
     score: "9.8",
     description: "Groundbreaking spatial audio with world-class noise cancellation performance.",
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80"
+    image: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Apple AirTag 4 Pack",
@@ -458,7 +458,7 @@ const initialProducts: Product[] = [
     price: "$99.00",
     score: "9.7",
     description: "Keep track of your keys, wallet, luggage, and items right in the Find My app.",
-    image: "https://images.unsplash.com/photo-1622445275576-72432ec7a9aa?auto=format&fit=crop&w=600&q=80"
+    image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Keurig K-Elite Coffee Maker",
