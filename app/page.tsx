@@ -101,6 +101,14 @@ const initialProducts: Product[] = [
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80"
   },
   {
+    name: "Amazon Basics Disinfecting Wipes",
+    category: "Facility Safety",
+    price: "$17.99",
+    score: "9.5",
+    description: "Bleach-free cleaning and disinfecting wipes that kill 99.9% of viruses and bacteria.",
+    image: "https://images.unsplash.com/photo-1584744982491-665216d95f8b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
     name: "Garmin Forerunner 265",
     category: "Sports",
     price: "$449.99",
@@ -534,7 +542,7 @@ const initialProducts: Product[] = [
   }
 ];
 
-const categories = ["All", "Tech", "Kitchen", "Workspace", "Gaming", "Mobile", "Medical Supplies", "Sports", "Home", "Audio", "Drones", "Trending", "Smart Home", "Fitness", "Automotive", "Outdoor"];
+const categories = ["All", "Tech", "Kitchen", "Workspace", "Gaming", "Mobile", "Medical Supplies", "Facility Safety", "Sports", "Home", "Audio", "Drones", "Trending", "Smart Home", "Fitness", "Automotive", "Outdoor"];
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("All");
