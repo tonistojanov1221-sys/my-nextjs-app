@@ -267,6 +267,55 @@ const initialProducts: Product[] = [
     score: "9.9",
     description: "Anti-gravity suspension multi-day backpacking pack for ultimate load comfort.",
     image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80"
+  },
+  // Нови производи
+  {
+    name: "JBL Flip 6 Portable Bluetooth Speaker",
+    category: "Audio",
+    price: "$129.95",
+    score: "9.6",
+    description: "Bold sound portable waterproof speaker with deep bass and party boost.",
+    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Razer DeathAdder V3 Pro Wireless Mouse",
+    category: "Gaming",
+    price: "$149.99",
+    score: "9.8",
+    description: "Ultra-lightweight ergonomic esports wireless gaming mouse with 30K optical sensor.",
+    image: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Nespresso VertuoPlus Coffee and Espresso Maker",
+    category: "Kitchen",
+    price: "$169.00",
+    score: "9.5",
+    description: "Single-serve coffee and espresso system with centrifusion technology.",
+    image: "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Logitech C920x HD Pro Webcam",
+    category: "Workspace",
+    price: "$69.99",
+    score: "9.4",
+    description: "Full HD 1080p video calling and recording with stereo audio.",
+    image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Apple iPad Air 11-inch (M2)",
+    category: "Tech",
+    price: "$599.00",
+    score: "9.8",
+    description: "Immersive Liquid Retina display powered by the breakthrough M2 chip.",
+    image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Anker Prime 240W 4-Port GaN Desktop Charger",
+    category: "Trending",
+    price: "$199.99",
+    score: "9.7",
+    description: "High-speed multi-device charging station for laptops, tablets, and phones simultaneously.",
+    image: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=600&q=80"
   }
 ];
 
