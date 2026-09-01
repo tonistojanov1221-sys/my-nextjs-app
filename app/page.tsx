@@ -117,6 +117,14 @@ const initialProducts: Product[] = [
     image: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&w=600&q=80"
   },
   {
+    name: "Etekcity Infrared Thermometer Laser Temperature Gun 774",
+    category: "Specialized Tools & Parts",
+    price: "$18.99",
+    score: "9.6",
+    description: "Accurate non-contact infrared digital laser temperature gun for industrial and mechanical troubleshooting.",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80"
+  },
+  {
     name: "Garmin Forerunner 265",
     category: "Sports",
     price: "$449.99",
@@ -550,7 +558,7 @@ const initialProducts: Product[] = [
   }
 ];
 
-const categories = ["All", "Tech", "Kitchen", "Workspace", "Gaming", "Mobile", "Medical Supplies", "Facility Safety", "Classroom", "Sports", "Home", "Audio", "Drones", "Trending", "Smart Home", "Fitness", "Automotive", "Outdoor"];
+const categories = ["All", "Tech", "Kitchen", "Workspace", "Gaming", "Mobile", "Medical Supplies", "Facility Safety", "Classroom", "Specialized Tools & Parts", "Sports", "Home", "Audio", "Drones", "Trending", "Smart Home", "Fitness", "Automotive", "Outdoor"];
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("All");
