@@ -138,7 +138,7 @@ const initialProducts: Product[] = [
     price: "$399.00",
     score: "9.7",
     description: "Најтенок и најнапреден паметен часовник од Apple со поголем екран.",
-    image: "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?auto=format&fit=crop&w=600&q=80"
+    image: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Nintendo Switch OLED Model",
@@ -162,7 +162,7 @@ const initialProducts: Product[] = [
     price: "$89.99",
     score: "9.7",
     description: "Qi2 certified wireless portable charger with a built-in foldable kickstand.",
-    image: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=600&q=80"
+    image: "https://images.unsplash.com/photo-1609592424072-d5952fcf4eb3?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Amazon Echo Show 5",
@@ -522,7 +522,7 @@ const initialProducts: Product[] = [
     price: "$549.99",
     score: "9.7",
     description: "HEPA air purifier and cooling fan that automatically detects and traps airborne pollutants.",
-    image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=600&q=80"
+    image: "https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=600&q=80"
   }
 ];
 
