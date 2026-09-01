@@ -606,7 +606,7 @@ export default function Home() {
                   src={product.image}
                   alt={product.name}
                   loading="lazy"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300"
                 />
               </div>
 
