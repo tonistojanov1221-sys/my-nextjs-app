@@ -188,7 +188,6 @@ const initialProducts: Product[] = [
     description: "Advanced health tracker with built-in GPS, Google apps, and heart rate monitoring.",
     image: "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?auto=format&fit=crop&w=600&q=80"
   },
-  // --- 10 NEW PRODUCTS ---
   {
     name: "Garmin Dash Cam 67W",
     category: "Automotive",
@@ -211,7 +210,7 @@ const initialProducts: Product[] = [
     price: "$99.95",
     score: "9.9",
     description: "Ultra-safe 1000A 12V lithium portable car battery jump starter box.",
-    image: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=600&q=80"
+    image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Meguiar's Complete Car Care Kit",
