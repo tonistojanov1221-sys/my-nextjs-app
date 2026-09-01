@@ -316,7 +316,6 @@ const initialProducts: Product[] = [
     description: "High-speed multi-device charging station for laptops, tablets, and phones simultaneously.",
     image: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=600&q=80"
   },
-  // Сосема нови производи
   {
     name: "Ring Video Doorbell Pro 2",
     category: "Smart Home",
@@ -364,6 +363,167 @@ const initialProducts: Product[] = [
     score: "9.6",
     description: "Keep your hot coffee or tea at the exact preferred temperature from your phone.",
     image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80"
+  },
+  // 20 НОВИ ПРОИЗВОДИ
+  {
+    name: "Oculus Quest 3 Advanced All-In-One VR Headset",
+    category: "Gaming",
+    price: "$499.99",
+    score: "9.9",
+    description: "Dumbfounding mixed reality and immersive virtual reality gaming experience.",
+    image: "https://images.unsplash.com/photo-1622979135225-d2ba269bc1df?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "GoPro HERO12 Black Creator Edition",
+    category: "Drones",
+    price: "$599.99",
+    score: "9.8",
+    description: "Ultimate 5.3K video waterproof action camera with all-in-one vlogging kit.",
+    image: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Apple iPad Pro 13-inch (M4)",
+    category: "Tech",
+    price: "$1,299.00",
+    score: "9.9",
+    description: "Thinnest Apple product ever with an astonishing Ultra Retina XDR display.",
+    image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Marshall Stanmore III Wireless Bluetooth Speaker",
+    category: "Audio",
+    price: "$379.99",
+    score: "9.7",
+    description: "Legendary room-filling sound with classic rock-and-roll heritage design.",
+    image: "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Dyson Supersonic Hair Dryer",
+    category: "Home",
+    price: "$429.99",
+    score: "9.6",
+    description: "Engineered for fast drying with intelligent heat protection for hair shine.",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Theragun Pro Deep Tissue Massage Gun",
+    category: "Fitness",
+    price: "$499.00",
+    score: "9.8",
+    description: "Professional-grade percussive therapy device for muscle recovery and tension relief.",
+    image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Traeger Grills Pro 578 Wood Pellet Grill",
+    category: "Outdoor",
+    price: "$799.95",
+    score: "9.7",
+    description: "Versatile wood-fired flavor grill and smoker with digital WiFIRE control.",
+    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Garmin Fenix 7 Pro Sapphire Solar",
+    category: "Sports",
+    price: "$899.99",
+    score: "9.9",
+    description: "Ultimate rugged multisport GPS smartwatch with solar charging capabilities.",
+    image: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Secretlab Titan Evo Ergonomic Gaming Chair",
+    category: "Gaming",
+    price: "$549.00",
+    score: "9.8",
+    description: "Award-winning gaming chair with custom-engineered ergonomic support.",
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Sony Alpha 7 IV Mirrorless Camera",
+    category: "Tech",
+    price: "$2,498.00",
+    score: "9.9",
+    description: "Full-frame hybrid camera with 33MP resolution and advanced AI autofocus.",
+    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Bose QuietComfort Ultra Wireless Headphones",
+    category: "Audio",
+    price: "$429.00",
+    score: "9.8",
+    description: "Groundbreaking spatial audio with world-class noise cancellation performance.",
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Apple AirTag 4 Pack",
+    category: "Trending",
+    price: "$99.00",
+    score: "9.7",
+    description: "Keep track of your keys, wallet, luggage, and items right in the Find My app.",
+    image: "https://images.unsplash.com/photo-1622445275576-72432ec7a9aa?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Keurig K-Elite Coffee Maker",
+    category: "Kitchen",
+    price: "$189.99",
+    score: "9.4",
+    description: "Single-serve K-Cup pod coffee maker with iced coffee setting and strong brew.",
+    image: "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Acer Predator XB273U Gaming Monitor",
+    category: "Gaming",
+    price: "$399.99",
+    score: "9.6",
+    description: "27-inch WQHD 240Hz high-speed IPS display with G-Sync compatibility.",
+    image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Anker Solix C1000 Portable Power Station",
+    category: "Outdoor",
+    price: "$999.00",
+    score: "9.8",
+    description: "Ultra-fast charging backup lithium battery generator for camping and emergencies.",
+    image: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Logitech MX Mechanical Wireless Keyboard",
+    category: "Workspace",
+    price: "$169.99",
+    score: "9.7",
+    description: "Fluid low-profile mechanical keys with smart backlighting and multi-device connection.",
+    image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Vitamix Explorian Blender",
+    category: "Kitchen",
+    price: "$349.95",
+    score: "9.8",
+    description: "Professional-grade high-performance variable speed food blender for smoothies and hot soups.",
+    image: "https://images.unsplash.com/photo-1570222094114-d074f7e9455c?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Nanoleaf Shapes Triangles Starter Kit",
+    category: "Smart Home",
+    price: "$199.99",
+    score: "9.5",
+    description: "Modular smart color-changing LED wall panels that react to your music and touch.",
+    image: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Samsung 990 PRO 2TB NVMe M.2 SSD",
+    category: "Tech",
+    price: "$189.99",
+    score: "9.9",
+    description: "Blazing fast PCIe 4.0 internal solid state drive for ultimate gaming and content creation.",
+    image: "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    name: "Dyson Purifier Cool Smart Air Purifier",
+    category: "Home",
+    price: "$549.99",
+    score: "9.7",
+    description: "HEPA air purifier and cooling fan that automatically detects and traps airborne pollutants.",
+    image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=600&q=80"
   }
 ];
 
