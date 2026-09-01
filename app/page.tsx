@@ -90,7 +90,7 @@ const initialProducts: Product[] = [
     price: "$1,199.00",
     score: "9.8",
     description: "Titanium design with a powerful pro camera system.",
-    image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80"
+    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Garmin Forerunner 265",
@@ -98,7 +98,7 @@ const initialProducts: Product[] = [
     price: "$449.99",
     score: "9.6",
     description: "Advanced GPS running smartwatch with a vibrant AMOLED display.",
-    image: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=600&q=80"
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Dyson V15 Detect Cordless Vacuum",
@@ -338,7 +338,7 @@ const initialProducts: Product[] = [
     price: "$299.99",
     score: "9.6",
     description: "Advanced fitness coaching, sleep tracking, and a larger crystal-clear display.",
-    image: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=600&q=80"
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Le Creuset Enameled Cast Iron Dutch Oven",
@@ -364,7 +364,6 @@ const initialProducts: Product[] = [
     description: "Keep your hot coffee or tea at the exact preferred temperature from your phone.",
     image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80"
   },
-  // 20 НОВИ ПРОИЗВОДИ
   {
     name: "Oculus Quest 3 Advanced All-In-One VR Headset",
     category: "Gaming",
@@ -602,7 +601,7 @@ export default function Home() {
           {filteredProducts.map((product, index) => (
             <div key={index} className="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
               {/* Image Container */}
-              <div className="relative h-52 w-full bg-slate-100 overflow-hidden">
+              <div className="relative h-52 w-full bg-slate-100 overflow-hidden flex items-center justify-center">
                 <img
                   src={product.image}
                   alt={product.name}
