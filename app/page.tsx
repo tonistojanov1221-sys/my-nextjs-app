@@ -370,7 +370,7 @@ const initialProducts: Product[] = [
     price: "$499.99",
     score: "9.9",
     description: "Dumbfounding mixed reality and immersive virtual reality gaming experience.",
-    image: "https://images.unsplash.com/photo-1622979135225-d2ba269bc1df?auto=format&fit=crop&w=600&q=80"
+    image: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "GoPro HERO12 Black Creator Edition",
@@ -378,7 +378,7 @@ const initialProducts: Product[] = [
     price: "$599.99",
     score: "9.8",
     description: "Ultimate 5.3K video waterproof action camera with all-in-one vlogging kit.",
-    image: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80"
+    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Apple iPad Pro 13-inch (M4)",
