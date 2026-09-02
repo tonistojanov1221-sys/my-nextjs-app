@@ -130,7 +130,7 @@ const initialProducts: Product[] = [
     price: "$34.99",
     score: "9.7",
     description: "Manual-ranging 600V AC/DC voltage tester for batteries, current, resistance, diodes, and continuity.",
-    image: "https://m.media-amazon.com/images/I/61m1hD4tQdL._AC_SL1500_.jpg"
+    image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80"
   },
   {
     name: "Garmin Forerunner 265",
