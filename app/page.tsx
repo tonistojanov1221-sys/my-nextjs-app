@@ -10,7 +10,7 @@ const products = [
     price: 34.99,
     description: "Manual-ranging 600V AC/DC voltage tester for batteries, current, resistance, diodes, and continuity.",
     image: "https://m.media-amazon.com/images/I/61m1hD4tQdL._AC_SL1500_.jpg",
-    amazonUrl: "https://www.amazon.com/Klein-Tools-MM325-Multimeter-Manual-Ranging/dp/B0B57L9FNL/",
+    amazonUrl: "https://www.amazon.com/Klein-Tools-MM325-Multimeter-Manual-Ranging/dp/B0B57L9FNL/ref=ab_uc_d_grid_213428019011_213382818011_d_sccl_8/135-1353462-3149521?pd_rd_w=CaLWE&content-id=amzn1.sym.1c297939-9850-403b-ae76-52c853498468&pf_rd_p=1c297939-9850-403b-ae76-52c853498468&pf_rd_r=N7Y6D4YF21NAT8Z6NB2M&pd_rd_wg=lzZyM&pd_rd_r=8b494ccf-d743-4616-af95-b05c48e916e2&pd_rd_i=B0B57L9FNL&th=1",
     score: 9.8
   },
   {
@@ -19,9 +19,29 @@ const products = [
     category: "Sports",
     price: 449.99,
     description: "Advanced GPS running smartwatch with a vibrant AMOLED display.",
-    image: "https://m.media-amazon.com/images/I/71X8g0z5Y1L._AC_SL1500_.jpg",
+    image: "https://m.media-amazon.com/images/I/61R1w2W32iL._AC_SL1000_.jpg",
     amazonUrl: "https://www.amazon.com/",
     score: 9.6
+  },
+  {
+    id: "sony-wh-1000xm5",
+    title: "Sony WH-1000XM5",
+    category: "Electronics",
+    price: 398.00,
+    description: "Industry-leading noise canceling wireless headphones.",
+    image: "https://m.media-amazon.com/images/I/51SKmu2xzFL._AC_SL1000_.jpg",
+    amazonUrl: "https://affiliate-program.amazon.com/",
+    score: 9.5
+  },
+  {
+    id: "kindle-paperwhite",
+    title: "Kindle Paperwhite",
+    category: "Electronics",
+    price: 149.99,
+    description: "6.8\" display, adjustable warm light, up to 10 weeks of battery life.",
+    image: "https://m.media-amazon.com/images/I/51WwH4YQ0iL._AC_SL1000_.jpg",
+    amazonUrl: "https://affiliate-program.amazon.com/home?openid.assoc_handle=amzn_associates_us&openid.claimed_id=https%3A%2F%2Fwww.amazon.com%2Fap%2Fid%2Famzn1.account.AHDDM2OCHHDYTIOEAJVAKLLZFNHQ&openid.identity=https%3A%2F%2Fwww.amazon.com%2Fap%2Fid%2Famzn1.account.AHDDM2OCHHDYTIOEAJVAKLLZFNHQ&openid.mode=id_res&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.op_endpoint=https%3A%2F%2Fwww.amazon.com%2Fap%2Fsignin&openid.response_nonce=2026-09-02T15%3A37%3A28Z5809056531920017862&openid.return_to=https%3A%2F%2Faffiliate-program.amazon.com%2Fhome&openid.signed=assoc_handle%2Cclaimed_id%2Cidentity%2Cmode%2Cns%2Cop_endpoint%2Cresponse_nonce%2Creturn_to%2Cns.pape%2Cpape.auth_policies%2Cpape.auth_time%2Csigned&openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&openid.pape.auth_policies=http%3A%2F%2Fschemas.openid.net%2Fpape%2Fpolicies%2F2007%2F06%2Fmulti-factor&openid.pape.auth_time=2026-09-02T15%3A36%3A31Z&openid.sig=D2Nqqze1auYqTQD33jGsC14tcB0Fz0ZH8%2BtZSPboF0M%3D&serial=#",
+    score: 9.7
   }
 ];
 
