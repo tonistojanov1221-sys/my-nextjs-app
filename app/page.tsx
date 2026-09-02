@@ -125,6 +125,14 @@ const initialProducts: Product[] = [
     image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80"
   },
   {
+    name: "Klein Tools MM325 Digital Multimeter",
+    category: "Specialized Tools & Parts",
+    price: "$34.99",
+    score: "9.7",
+    description: "Manual-ranging 600V AC/DC voltage tester for batteries, current, resistance, diodes, and continuity.",
+    image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80"
+  },
+  {
     name: "Garmin Forerunner 265",
     category: "Sports",
     price: "$449.99",
