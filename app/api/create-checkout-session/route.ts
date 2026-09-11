@@ -12,13 +12,11 @@ export async function POST(request: Request) {
       )
     }
 
-    // ✅ Added apiVersion for stability and better TypeScript support
-    const stripe = new Stripe(secretKey, {
-      apiVersion: '2024-06-20', // Use the latest stable Stripe API version
-    })
+    // ✅ ПОПРАВКА: Избришан apiVersion за да се избегне TypeScript грешка
+    // Stripe автоматски ќе ја користи точната верзија за инсталираниот пакет
+    const stripe = new Stripe(secretKey)
 
     const body = await request.json()
-
     const email = typeof body.email === 'string' ? body.email.trim() : ''
 
     if (!email) {
@@ -48,10 +46,6 @@ export async function POST(request: Request) {
         },
       ],
       mode: 'subscription',
-      
-      // ✅ REMOVED: 'adaptive_pricing' and 'managed_payments' 
-      // (These are NOT valid Stripe Checkout parameters and will cause API crashes)
-
       metadata: {
         product: 'smartpick-ai',
         plan: 'premium',
@@ -64,7 +58,6 @@ export async function POST(request: Request) {
 
   } catch (error) {
     console.error('STRIPE CHECKOUT ERROR:', error)
-
     const message = error instanceof Error ? error.message : 'Unknown Stripe error'
 
     return NextResponse.json(
