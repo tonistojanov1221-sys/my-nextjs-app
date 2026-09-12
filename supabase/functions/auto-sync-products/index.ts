@@ -19,7 +19,6 @@ serve(async (req) => {
 
     console.log('🤖 Auto-sync започна...')
 
-    // Вистински производи од AliExpress/Amazon (примери)
     const productsToAdd = [
       {
         title: 'Xiaomi Smart Band 8 Fitness Tracker',
@@ -40,24 +39,6 @@ serve(async (req) => {
         image_url: 'https://ae01.alicdn.com/kf/S0987654321.jpg'
       },
       {
-        title: 'Robot Vacuum Cleaner X10',
-        price: 249.00,
-        badge: 'NEW',
-        affiliate_url: 'https://www.amazon.com/dp/B0TEST123',
-        description: 'Smart robot vacuum with mapping, auto-empty station, and app control',
-        category: 'Home Appliances',
-        image_url: 'https://m.media-amazon.com/images/I/test123.jpg'
-      },
-      {
-        title: 'Gaming Mechanical Keyboard RGB',
-        price: 59.50,
-        badge: 'HOT',
-        affiliate_url: 'https://www.aliexpress.com/item/1005003456789012.html',
-        description: 'Mechanical gaming keyboard with RGB backlight, blue switches, and anti-ghosting',
-        category: 'Computer & Office',
-        image_url: 'https://ae01.alicdn.com/kf/S3456789012.jpg'
-      },
-      {
         title: 'Smart Watch Ultra 2026',
         price: 199.99,
         badge: 'AI Choice',
@@ -65,23 +46,39 @@ serve(async (req) => {
         description: 'Premium smartwatch with health monitoring, GPS, and 7-day battery life',
         category: 'Electronics',
         image_url: 'https://ae01.alicdn.com/kf/S6789012345.jpg'
+      },
+      {
+        title: 'Portable Blender USB Rechargeable',
+        price: 24.99,
+        badge: 'NEW',
+        affiliate_url: 'https://www.aliexpress.com/item/1005007890123456.html',
+        description: 'Mini portable blender for smoothies and shakes, USB rechargeable, perfect for travel',
+        category: 'Home Appliances',
+        image_url: 'https://ae01.alicdn.com/kf/S7890123456.jpg'
+      },
+      {
+        title: 'LED Desk Lamp with Wireless Charger',
+        price: 45.00,
+        badge: 'HOT',
+        affiliate_url: 'https://www.aliexpress.com/item/1005008901234567.html',
+        description: 'Smart LED desk lamp with wireless phone charger, 5 brightness levels, eye protection',
+        category: 'Home & Garden',
+        image_url: 'https://ae01.alicdn.com/kf/S8901234567.jpg'
       }
     ]
 
-    // Провери за дупликати и додади ги производите
     let addedCount = 0
     let skippedCount = 0
+    let priceChangedCount = 0
 
     for (const product of productsToAdd) {
-      // Провери дали веќе постои производ со ист наслов
       const { data: existing } = await supabase
         .from('products')
-        .select('id')
+        .select('id, price')
         .ilike('title', product.title)
         .single()
 
       if (!existing) {
-        // Додади го производот ако не постои
         const { error } = await supabase
           .from('products')
           .insert([{
@@ -90,24 +87,54 @@ serve(async (req) => {
           }])
 
         if (error) {
-          console.error(' Грешка при додавање:', product.title, error.message)
+          console.error('❌ Грешка:', product.title, error.message)
         } else {
           console.log('✅ Додаден:', product.title)
           addedCount++
         }
       } else {
-        console.log('⏭️ Веќе постои:', product.title)
-        skippedCount++
+        if (existing.price !== product.price) {
+          await supabase
+            .from('price_history')
+            .insert([{
+              product_id: existing.id,
+              old_price: existing.price,
+              new_price: product.price
+            }])
+
+          await supabase
+            .from('products')
+            .update({ price: product.price })
+            .eq('id', existing.id)
+
+          console.log('💰 Цена променета:', product.title, existing.price, '→', product.price)
+          priceChangedCount++
+
+          const { data: alerts } = await supabase
+            .from('price_alerts')
+            .select('user_email, target_price')
+            .eq('product_id', existing.id)
+            .eq('notified', false)
+            .lte('target_price', product.price)
+
+          if (alerts && alerts.length > 0) {
+            console.log(' Испрати известувања до', alerts.length, 'корисници')
+          }
+        } else {
+          console.log('⏭️ Без промени:', product.title)
+          skippedCount++
+        }
       }
     }
 
-    console.log(`📊 Резултат: Додадени ${addedCount}, Прескокнати ${skippedCount}`)
+    console.log(`📊 Резултат: Додадени ${addedCount}, Прескокнати ${skippedCount}, Промени на цени ${priceChangedCount}`)
 
     return new Response(
       JSON.stringify({ 
         success: true, 
         added: addedCount,
-        skipped: skippedCount 
+        skipped: skippedCount,
+        priceChanges: priceChangedCount
       }),
       { 
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
