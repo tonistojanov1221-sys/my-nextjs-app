@@ -1,0 +1,16 @@
+name: Auto Sync Products
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+jobs:
+  sync-products:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Supabase Edge Function
+        run: |
+          curl -X POST 'https://wwbpkesaxktxxdvltruh.supabase.co/functions/v1/auto-sync-products' \
+            -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind3YnBrZXNheGt0eHhkdmx0cnVoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg2MjA0MTksImV4cCI6MjEwNDE5NjQxOX0.oKGjZhYZG-v0kzipZCIljqEhF-jTOPaAfz2qyLagl68' \
+            -H 'Content-Type: application/json'
