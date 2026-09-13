@@ -169,7 +169,7 @@ export default function Home() {
               placeholder="Search products..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-4 py-2 bg-slate-950 border border-slate-800 rounded-lg text-sm"
+              className="w-full px-4 py-2 bg-slate-950 border border-slate-800 rounded-lg text-sm focus:outline-none focus:border-indigo-500 transition-colors"
             />
           </div>
 
@@ -177,14 +177,14 @@ export default function Home() {
             <button
               type="button"
               onClick={toggleAiShopper}
-              className="bg-fuchsia-600 text-white px-4 py-2 rounded-lg text-sm"
+              className="bg-fuchsia-600 hover:bg-fuchsia-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
             >
               ✨ AI Shopper
             </button>
             <button
               type="button"
               onClick={handleSignIn}
-              className="bg-slate-800 text-white px-4 py-2 rounded-lg text-sm"
+              className="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
             >
               Sign In
             </button>
@@ -192,28 +192,56 @@ export default function Home() {
         </div>
       </header>
 
-      {/* HERO */}
-      <section className="w-full max-w-7xl px-4 md:px-6 py-12 md:py-16 text-center">
-        <div className="inline-block bg-indigo-950/80 border border-indigo-800 text-indigo-300 px-3 py-1 rounded-full text-xs mb-4">
-           ULTIMATE PRICE TRACKING & DEAL FINDER
-        </div>
-        <h2 className="text-3xl md:text-5xl font-extrabold mb-4 md:mb-6">
-          Never Overpay Again
-        </h2>
-        <p className="text-slate-400 max-w-2xl mx-auto text-base md:text-lg mb-8 px-4">
-          Discover top-rated products from AliExpress, Amazon, Temu, and Alibaba.
-        </p>
-        <div className="bg-slate-900 border border-slate-800 p-3 md:p-4 rounded-xl inline-flex items-center gap-2 md:gap-3 text-xs md:text-sm">
-          <span className="w-2 h-2 md:w-3 md:h-3 bg-emerald-500 rounded-full animate-pulse"></span>
-          <span className="text-slate-400">Live Tracking</span>
-          <span className="text-slate-600">|</span>
-          <span className="text-slate-400">40+ Categories</span>
+      {/* HERO - ПОДОБРЕНО */}
+      <section className="w-full max-w-7xl px-4 md:px-6 py-16 md:py-24 text-center relative overflow-hidden">
+        {/* Background декорации */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-fuchsia-600/20 rounded-full blur-3xl animate-pulse-slow" style={{animationDelay: '1s'}}></div>
+        
+        <div className="relative z-10">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600/20 to-fuchsia-600/20 border border-indigo-500/30 px-4 py-2 rounded-full text-xs md:text-sm font-semibold mb-6 animate-fade-in">
+            <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+             ULTIMATE PRICE TRACKING & DEAL FINDER
+          </div>
+
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 animate-slide-up">
+            <span className="text-gradient">Never Overpay Again</span>
+          </h2>
+          
+          <p className="text-slate-400 max-w-3xl mx-auto text-base md:text-lg mb-10 px-4 leading-relaxed animate-slide-up" style={{animationDelay: '0.2s'}}>
+            Discover top-rated products from AliExpress, Amazon, Temu, and Alibaba.
+            <br className="hidden md:block" />
+            Real-time market monitoring delivers instant notifications straight to your inbox.
+          </p>
+          
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-300 font-medium mb-12 animate-slide-up" style={{animationDelay: '0.3s'}}>
+            <span className="flex items-center gap-2">
+              <span className="bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full text-xs">✓</span>
+              Verified Best Deals
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full text-xs">✓</span>
+              Instant Price Alerts
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full text-xs">✓</span>
+              Secure & Free to Use
+            </span>
+          </div>
+
+          <div className="glass inline-flex items-center gap-3 px-6 py-4 rounded-2xl animate-slide-up" style={{animationDelay: '0.4s'}}>
+            <span className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse shadow-lg shadow-emerald-500/50"></span>
+            <span className="text-slate-400 text-sm">SYSTEM STATUS:</span>
+            <span className="font-bold text-white text-sm">Live Tracking</span>
+            <span className="text-slate-600">|</span>
+            <span className="text-slate-400 text-sm">Monitoring 40+ Categories</span>
+          </div>
         </div>
       </section>
 
       {/* STORE TABS */}
       <section className="w-full max-w-7xl px-4 md:px-6 mb-4 md:mb-6">
-        <div className="flex gap-2 overflow-x-auto pb-2">
+        <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
           {stores.map((store) => {
             const isActive = store === selectedStore;
             return (
@@ -221,10 +249,10 @@ export default function Home() {
                 key={store}
                 type="button"
                 onClick={() => setSelectedStore(store)}
-                className={`px-4 md:px-6 py-2 md:py-3 rounded-lg text-xs md:text-sm font-bold whitespace-nowrap border-2 ${
+                className={`px-4 md:px-6 py-2 md:py-3 rounded-lg text-xs md:text-sm font-bold whitespace-nowrap border-2 transition-all duration-300 ${
                   isActive
-                    ? 'bg-fuchsia-600 border-fuchsia-500 text-white'
-                    : 'bg-slate-900 border-slate-700 text-slate-300'
+                    ? 'bg-fuchsia-600 border-fuchsia-500 text-white shadow-lg shadow-fuchsia-500/30'
+                    : 'bg-slate-900 border-slate-700 text-slate-300 hover:bg-slate-800'
                 }`}
               >
                 {store}
@@ -240,14 +268,14 @@ export default function Home() {
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-lg text-sm"
+            className="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-lg text-sm focus:outline-none focus:border-indigo-500"
           >
             {categories.map((cat) => (
               <option key={cat} value={cat}>{cat}</option>
             ))}
           </select>
         </div>
-        <div className="hidden md:flex gap-2 overflow-x-auto pb-4">
+        <div className="hidden md:flex gap-2 overflow-x-auto pb-4 scrollbar-hide">
           {categories.map((cat) => {
             const isActive = cat === selectedCategory;
             return (
@@ -255,10 +283,10 @@ export default function Home() {
                 key={cat}
                 type="button"
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-lg text-xs font-medium whitespace-nowrap border ${
+                className={`px-4 py-2 rounded-lg text-xs font-medium whitespace-nowrap border transition-all duration-300 ${
                   isActive
-                    ? 'bg-indigo-600 border-indigo-500 text-white'
-                    : 'bg-slate-900 border-slate-800 text-slate-300'
+                    ? 'bg-indigo-600 border-indigo-500 text-white shadow-lg shadow-indigo-500/30'
+                    : 'bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800'
                 }`}
               >
                 {cat}
@@ -268,7 +296,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PRODUCTS */}
+      {/* PRODUCTS - ПОДОБРЕНО */}
       <section className="w-full max-w-7xl px-4 md:px-6 mb-20">
         {loading ? (
           <div className="bg-slate-900 border border-slate-800 p-10 rounded-2xl text-center">
@@ -277,40 +305,61 @@ export default function Home() {
         ) : filteredProducts.length === 0 ? (
           <div className="bg-slate-900 border border-slate-800 p-10 rounded-2xl text-center">
             <h3 className="text-xl font-bold mb-2">No products found</h3>
+            <p className="text-slate-400">Try another search term, category, or store.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {filteredProducts.map((product) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {filteredProducts.map((product, index) => (
               <div
                 key={product.id}
-                className="bg-slate-900 border border-slate-800 p-4 md:p-6 rounded-xl hover:border-indigo-500 transition-all"
+                className="group bg-slate-900/80 border border-slate-800 p-5 md:p-6 rounded-2xl hover:border-indigo-500/50 transition-all duration-500 card-hover backdrop-blur-sm animate-fade-in"
+                style={{animationDelay: `${index * 0.05}s`}}
               >
-                <div className="flex items-center justify-between mb-2">
-                  <div className="text-xs font-bold text-fuchsia-400 bg-fuchsia-950/50 px-2 py-1 rounded">
+                {/* Badge секција */}
+                <div className="flex items-center justify-between mb-3 flex-wrap gap-2">
+                  <div className="gradient-fuchsia text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg shadow-fuchsia-500/30">
                     {product.store}
                   </div>
+                  
                   {product.badge && (
-                    <div className="text-xs font-bold text-emerald-400 bg-emerald-950/50 px-2 py-1 rounded">
+                    <div className="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-3 py-1 rounded-full text-xs font-bold">
                       {product.badge}
                     </div>
                   )}
                 </div>
-                <h3 className="text-base md:text-xl font-bold mb-2">{product.title}</h3>
-                <p className="text-slate-400 text-xs md:text-sm mb-4">{product.description}</p>
-                <div className="flex items-center justify-between mt-4 pt-4 border-t border-slate-800">
-                  <span className="text-xl md:text-2xl font-black">${product.price.toFixed(2)}</span>
+
+                {/* Наслов и опис */}
+                <h3 className="text-lg md:text-xl font-bold mb-2 line-clamp-2 group-hover:text-indigo-400 transition-colors">
+                  {product.title}
+                </h3>
+                <p className="text-slate-400 text-xs md:text-sm mb-5 line-clamp-3 leading-relaxed">
+                  {product.description}
+                </p>
+
+                {/* Цена и копчиња */}
+                <div className="flex items-center justify-between mt-5 pt-5 border-t border-slate-800">
+                  <div className="flex flex-col">
+                    <span className="text-2xl md:text-3xl font-black text-gradient">
+                      ${product.price.toFixed(2)}
+                    </span>
+                    <span className="text-xs text-slate-500 line-through">
+                      ${(product.price * 1.3).toFixed(2)}
+                    </span>
+                  </div>
+
                   <div className="flex gap-2">
                     <button
                       type="button"
                       onClick={() => handleBuyNow(product.affiliate_url)}
-                      className="bg-indigo-600 px-3 py-2 rounded-lg text-xs font-semibold"
+                      className="gradient-indigo hover:shadow-lg hover:shadow-indigo-500/50 text-white px-4 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 btn-glow transform hover:scale-105"
                     >
-                      Buy
+                      Buy Now
                     </button>
+
                     <button
                       type="button"
                       onClick={() => handleSetAlert(product.title)}
-                      className="bg-slate-800 px-2 py-2 rounded-lg text-xs"
+                      className="bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-indigo-500/50 px-3 py-2.5 rounded-xl text-xs font-semibold transition-all duration-300"
                     >
                       🔔
                     </button>
@@ -335,9 +384,9 @@ export default function Home() {
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg flex-1 max-w-md"
+              className="px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg focus:outline-none focus:border-indigo-500 flex-1 max-w-md"
             />
-            <button type="submit" className="bg-fuchsia-600 text-white px-6 py-3 rounded-lg font-medium">
+            <button type="submit" className="bg-fuchsia-600 hover:bg-fuchsia-500 text-white px-6 py-3 rounded-lg font-medium transition-colors">
               Join Free
             </button>
           </form>
@@ -357,7 +406,7 @@ export default function Home() {
               <span>✨</span>
               <h3 className="font-bold text-sm">AI Shopper</h3>
             </div>
-            <button onClick={() => setIsChatOpen(false)} className="text-slate-400"></button>
+            <button onClick={() => setIsChatOpen(false)} className="text-slate-400 hover:text-white">✕</button>
           </div>
           <div className="flex-1 overflow-y-auto px-4 py-3 space-y-3">
             {chatMessages.map((msg, index) => (
@@ -374,9 +423,9 @@ export default function Home() {
               value={chatInput}
               onChange={(e) => setChatInput(e.target.value)}
               placeholder="What are you looking for?"
-              className="flex-1 px-3 py-2 bg-slate-950 border border-slate-800 rounded-lg text-sm"
+              className="flex-1 px-3 py-2 bg-slate-950 border border-slate-800 rounded-lg text-sm focus:outline-none focus:border-indigo-500"
             />
-            <button type="submit" className="bg-fuchsia-600 text-white px-3 py-2 rounded-lg text-sm">
+            <button type="submit" className="bg-fuchsia-600 hover:bg-fuchsia-500 text-white px-3 py-2 rounded-lg text-sm font-semibold transition-colors">
               Send
             </button>
           </form>
