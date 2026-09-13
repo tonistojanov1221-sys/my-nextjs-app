@@ -192,16 +192,15 @@ export default function Home() {
         </div>
       </header>
 
-      {/* HERO - ПОДОБРЕНО */}
+      {/* HERO */}
       <section className="w-full max-w-7xl px-4 md:px-6 py-16 md:py-24 text-center relative overflow-hidden">
-        {/* Background декорации */}
         <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-fuchsia-600/20 rounded-full blur-3xl animate-pulse-slow" style={{animationDelay: '1s'}}></div>
         
         <div className="relative z-10">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600/20 to-fuchsia-600/20 border border-indigo-500/30 px-4 py-2 rounded-full text-xs md:text-sm font-semibold mb-6 animate-fade-in">
             <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
-             ULTIMATE PRICE TRACKING & DEAL FINDER
+            🚀 ULTIMATE PRICE TRACKING & DEAL FINDER
           </div>
 
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 animate-slide-up">
@@ -262,7 +261,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CATEGORIES */}
+      {/* CATEGORIES - со скролање */}
       <section className="w-full max-w-7xl px-4 md:px-6 mb-6 md:mb-12">
         <div className="md:hidden mb-4">
           <select
@@ -296,7 +295,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PRODUCTS - ПОДОБРЕНО */}
+      {/* PRODUCTS */}
       <section className="w-full max-w-7xl px-4 md:px-6 mb-20">
         {loading ? (
           <div className="bg-slate-900 border border-slate-800 p-10 rounded-2xl text-center">
@@ -315,7 +314,6 @@ export default function Home() {
                 className="group bg-slate-900/80 border border-slate-800 p-5 md:p-6 rounded-2xl hover:border-indigo-500/50 transition-all duration-500 card-hover backdrop-blur-sm animate-fade-in"
                 style={{animationDelay: `${index * 0.05}s`}}
               >
-                {/* Badge секција */}
                 <div className="flex items-center justify-between mb-3 flex-wrap gap-2">
                   <div className="gradient-fuchsia text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg shadow-fuchsia-500/30">
                     {product.store}
@@ -328,7 +326,6 @@ export default function Home() {
                   )}
                 </div>
 
-                {/* Наслов и опис */}
                 <h3 className="text-lg md:text-xl font-bold mb-2 line-clamp-2 group-hover:text-indigo-400 transition-colors">
                   {product.title}
                 </h3>
@@ -336,7 +333,6 @@ export default function Home() {
                   {product.description}
                 </p>
 
-                {/* Цена и копчиња */}
                 <div className="flex items-center justify-between mt-5 pt-5 border-t border-slate-800">
                   <div className="flex flex-col">
                     <span className="text-2xl md:text-3xl font-black text-gradient">
