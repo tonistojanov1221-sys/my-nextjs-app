@@ -21,7 +21,6 @@ interface Product {
   created_at?: string;
 }
 
-// SVG ЛОГОА ЗА ПРОДАВНИЦИТЕ
 const StoreLogo = ({ name }: { name: string }) => {
   switch (name) {
     case 'All':
@@ -95,60 +94,20 @@ export default function Home() {
   ]);
 
   const stores = [
-    'All',
-    'Amazon',
-    'AliExpress',
-    'Temu',
-    'Alibaba',
-    'Banggood',
-    'CJ Affiliate',
-    'Awin',
+    'All', 'Amazon', 'AliExpress', 'Temu', 'Alibaba', 'Banggood', 'CJ Affiliate', 'Awin'
   ];
 
   const categories = [
-    'All',
-    'Electronics',
-    'Home Appliances',
-    'Computer & Office',
-    'Home & Garden',
-    'Sports & Entertainment',
-    'Toys & Hobbies',
-    'Beauty & Health',
-    'Jewelry & Accessories',
-    'Phones & Telecommunications',
-    'Consumer Electronics',
-    'Lights & Lighting',
-    'Watches',
-    "Men's Clothing",
-    "Women's Clothing",
-    'Shoes',
-    'Bags & Luggage',
-    'Mother & Kids',
-    'Automobiles & Motorcycles',
-    'Tools & Home Improvement',
-    'Furniture',
-    'Kitchen & Dining',
-    'Bedding & Bath',
-    'Home Decor',
-    'Pet Supplies',
-    'Office & School Supplies',
-    'Security & Protection',
-    'Garden Supplies',
-    'Musical Instruments',
-    'Video Games',
-    'Camera & Photo',
-    'Smart Devices',
-    'Audio & Video',
-    'Gaming Accessories',
-    'Fitness Equipment',
-    'Outdoor & Camping',
-    'Travel & Luggage',
-    'Personal Care',
-    'Hair Care',
-    'Makeup',
-    'Skin Care',
-    'Health Care',
-    'Baby Products',
+    'All', 'Electronics', 'Home Appliances', 'Computer & Office', 'Home & Garden',
+    'Sports & Entertainment', 'Toys & Hobbies', 'Beauty & Health', 'Jewelry & Accessories',
+    'Phones & Telecommunications', 'Consumer Electronics', 'Lights & Lighting', 'Watches',
+    "Men's Clothing", "Women's Clothing", 'Shoes', 'Bags & Luggage', 'Mother & Kids',
+    'Automobiles & Motorcycles', 'Tools & Home Improvement', 'Furniture', 'Kitchen & Dining',
+    'Bedding & Bath', 'Home Decor', 'Pet Supplies', 'Office & School Supplies',
+    'Security & Protection', 'Garden Supplies', 'Musical Instruments', 'Video Games',
+    'Camera & Photo', 'Smart Devices', 'Audio & Video', 'Gaming Accessories',
+    'Fitness Equipment', 'Outdoor & Camping', 'Travel & Luggage', 'Personal Care',
+    'Hair Care', 'Makeup', 'Skin Care', 'Health Care', 'Baby Products',
   ];
 
   useEffect(() => {
@@ -169,7 +128,11 @@ export default function Home() {
       const query = searchQuery.toLowerCase().trim();
       const matchesStore = selectedStore === 'All' || product.store === selectedStore;
       const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
-      const matchesQuery = !query || product.title.toLowerCase().includes(query) || product.description.toLowerCase().includes(query) || product.category.toLowerCase().includes(query) || product.tag.toLowerCase().includes(query);
+      const matchesQuery = !query || 
+        product.title.toLowerCase().includes(query) || 
+        product.description.toLowerCase().includes(query) || 
+        product.category.toLowerCase().includes(query) || 
+        product.tag.toLowerCase().includes(query);
       return matchesStore && matchesCategory && matchesQuery;
     });
   }, [products, searchQuery, selectedCategory, selectedStore]);
@@ -248,18 +211,18 @@ export default function Home() {
 
   const categoryIcon = (category: string) => {
     const icons: Record<string, string> = {
-      All: '🏪', Electronics: '', 'Home Appliances': '🏠', 'Computer & Office': '💻',
+      All: '🏪', Electronics: '📱', 'Home Appliances': '🏠', 'Computer & Office': '💻',
       'Home & Garden': '🏡', 'Sports & Entertainment': '⚽', 'Toys & Hobbies': '🎮',
       'Beauty & Health': '💄', 'Jewelry & Accessories': '💍', 'Phones & Telecommunications': '📞',
       'Consumer Electronics': '📺', 'Lights & Lighting': '💡', Watches: '⌚',
       "Men's Clothing": '👔', "Women's Clothing": '👗', Shoes: '👟', 'Bags & Luggage': '👜',
       'Mother & Kids': '👶', 'Automobiles & Motorcycles': '🚗', 'Tools & Home Improvement': '🔧',
-      Furniture: '️', 'Kitchen & Dining': '️', 'Bedding & Bath': '️', 'Home Decor': '️',
-      'Pet Supplies': '', 'Office & School Supplies': '📚', 'Security & Protection': '🔒',
+      Furniture: '🛋️', 'Kitchen & Dining': '🍽️', 'Bedding & Bath': '🛏️', 'Home Decor': '🖼️',
+      'Pet Supplies': '🐾', 'Office & School Supplies': '📚', 'Security & Protection': '🔒',
       'Garden Supplies': '🌱', 'Musical Instruments': '🎸', 'Video Games': '🎮',
-      'Camera & Photo': '📷', 'Smart Devices': '🤖', 'Audio & Video': '',
-      'Gaming Accessories': '️', 'Fitness Equipment': '💪', 'Outdoor & Camping': '⛺',
-      'Travel & Luggage': '✈️', 'Personal Care': '', 'Hair Care': '💇',
+      'Camera & Photo': '📷', 'Smart Devices': '🤖', 'Audio & Video': '🎧',
+      'Gaming Accessories': '🎮', 'Fitness Equipment': '💪', 'Outdoor & Camping': '⛺',
+      'Travel & Luggage': '✈️', 'Personal Care': '🧴', 'Hair Care': '💇',
       Makeup: '💋', 'Skin Care': '✨', 'Health Care': '💊', 'Baby Products': '🍼',
     };
     return icons[category] || '📦';
@@ -267,13 +230,11 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#020817] text-white overflow-x-hidden">
-      {/* BACKGROUND */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute -top-40 -left-40 w-[550px] h-[550px] rounded-full bg-indigo-700/20 blur-[150px]" />
         <div className="absolute top-[400px] -right-40 w-[500px] h-[500px] rounded-full bg-fuchsia-700/10 blur-[150px]" />
       </div>
 
-      {/* HEADER */}
       <header className="sticky top-0 z-50 border-b border-white/10 bg-[#020817]/90 backdrop-blur-xl">
         <div className="max-w-[1440px] mx-auto px-5 md:px-8 h-[72px] flex items-center gap-5">
           <div className="flex items-center gap-3 shrink-0">
@@ -297,7 +258,6 @@ export default function Home() {
       </header>
 
       <div className="relative z-10">
-        {/* HERO */}
         <section className="max-w-[1440px] mx-auto px-5 md:px-8 pt-12 md:pt-16 pb-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -318,42 +278,64 @@ export default function Home() {
                 <span className="flex items-center gap-2"><span className="text-purple-400">✦</span> AI-Powered</span>
               </div>
             </div>
+
             <div className="hidden md:flex justify-center">
-              <div className="relative w-full max-w-[570px]">
-                <div className="absolute inset-10 rounded-full bg-blue-600/20 blur-[90px]" />
-                <div className="relative rounded-3xl border border-blue-500/30 bg-slate-900 p-7 rotate-[-3deg] shadow-2xl">
-                  <div className="flex gap-2 mb-5">
-                    <span className="w-2.5 h-2.5 bg-red-400 rounded-full" />
-                    <span className="w-2.5 h-2.5 bg-yellow-400 rounded-full" />
-                    <span className="w-2.5 h-2.5 bg-green-400 rounded-full" />
+              <div className="relative w-full max-w-[620px]">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/30 to-indigo-900/30 rounded-3xl blur-3xl" />
+                <div className="relative rounded-3xl border border-blue-500/30 bg-gradient-to-br from-slate-900 to-slate-950 p-8 shadow-2xl overflow-hidden">
+                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-20">
+                    <div className="relative">
+                      <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center shadow-2xl border-4 border-slate-900">
+                        <div className="text-5xl">🤖</div>
+                      </div>
+                      <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-16 h-3 bg-blue-500/50 blur-md" />
+                    </div>
                   </div>
-                  <div className="rounded-2xl bg-slate-800 p-6">
-                    <div className="flex justify-between mb-5">
-                      <span className="text-slate-400">Best Deal</span>
-                      <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold">Save 42%</span>
+
+                  <div className="mt-16 rounded-2xl bg-slate-800 p-6 border border-slate-700">
+                    <div className="flex gap-2 mb-4">
+                      <span className="w-3 h-3 bg-red-500 rounded-full" />
+                      <span className="w-3 h-3 bg-yellow-500 rounded-full" />
+                      <span className="w-3 h-3 bg-green-500 rounded-full" />
                     </div>
                     <div className="flex items-center gap-6">
-                      <div className="w-28 h-28 rounded-2xl bg-slate-700 flex items-center justify-center text-6xl">🎧</div>
-                      <div>
-                        <h3 className="text-xl font-black">Premium Headphones</h3>
-                        <p className="line-through text-slate-500 mt-2">$149.99</p>
-                        <p className="text-4xl font-black">$89.99</p>
+                      <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center text-7xl shadow-inner">🎧</div>
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-slate-400 text-sm">Best Deal</span>
+                          <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold">Save 42%</span>
+                        </div>
+                        <h3 className="text-2xl font-black text-white">Premium Headphones</h3>
+                        <p className="line-through text-slate-500 mt-1">$149.99</p>
+                        <div className="flex items-baseline gap-2">
+                          <p className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-fuchsia-500">$89.99</p>
+                        </div>
                       </div>
                     </div>
                   </div>
+
+                  <div className="absolute -right-4 top-24 w-28 rounded-2xl bg-slate-800 border border-slate-700 p-3 shadow-xl hidden lg:block">
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2 text-xs text-slate-300"><span className="text-blue-400">🔔</span> Price Alerts</div>
+                      <div className="flex items-center gap-2 text-xs text-slate-300"><span className="text-blue-400">📊</span> Track Prices</div>
+                      <div className="flex items-center gap-2 text-xs text-slate-300"><span className="text-blue-400">🔍</span> Find Deals</div>
+                      <div className="flex items-center gap-2 text-xs text-slate-300"><span className="text-blue-400">💰</span> Save Money</div>
+                    </div>
+                  </div>
+
+                  <div className="absolute -top-4 -right-4 px-5 py-3 rounded-2xl bg-gradient-to-r from-blue-600 to-fuchsia-600 shadow-2xl z-10">
+                    <p className="font-black text-sm text-white">Better Deals</p>
+                    <p className="font-black text-sm text-white">Smarter Shopping</p>
+                    <p className="text-blue-100 text-xs">With AI ✨</p>
+                  </div>
+
+                  <div className="absolute -bottom-6 -left-6 w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-fuchsia-600 flex items-center justify-center text-5xl shadow-2xl z-10">🤖</div>
                 </div>
-                <div className="absolute -top-8 right-0 px-6 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-fuchsia-600 shadow-2xl">
-                  <p className="font-black">Better Deals</p>
-                  <p className="font-black">Smarter Shopping</p>
-                  <p className="text-blue-200 text-sm">With AI ✨</p>
-                </div>
-                <div className="absolute -bottom-8 left-0 w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-fuchsia-600 flex items-center justify-center text-4xl shadow-xl"></div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* STORE BAR */}
         <section className="max-w-[1440px] mx-auto px-5 md:px-8 mb-8">
           <div className="store-wrapper">
             <button type="button" onClick={() => scrollStores('left')} className="scroll-arrow" aria-label="Scroll stores left">←</button>
@@ -373,7 +355,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* NEWSLETTER */}
         <section className="max-w-[1440px] mx-auto px-5 md:px-8 mb-10">
           <div className="newsletter">
             <div className="newsletter-icon">✉</div>
@@ -388,7 +369,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CATEGORIES */}
         <section className="max-w-[1440px] mx-auto px-5 md:px-8 mb-12">
           <div className="flex items-center justify-between mb-5">
             <h2 className="text-2xl font-black"><span className="text-blue-400">▦</span> Shop by Category</h2>
@@ -415,7 +395,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* PRODUCTS */}
         <section className="max-w-[1440px] mx-auto px-5 md:px-8 pb-20">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl md:text-3xl font-black">🔥 Featured Deals</h2>
@@ -456,7 +435,6 @@ export default function Home() {
           )}
         </section>
 
-        {/* FOOTER */}
         <footer className="border-t border-white/10 py-10 bg-slate-950">
           <div className="max-w-[1440px] mx-auto px-5 md:px-8 flex flex-col md:flex-row justify-between gap-4">
             <div>
@@ -468,7 +446,6 @@ export default function Home() {
         </footer>
       </div>
 
-      {/* AI SHOPPER */}
       {isChatOpen && (
         <div className="fixed bottom-5 right-5 z-[100] w-[calc(100%-2.5rem)] sm:w-[390px] max-h-[70vh] rounded-2xl overflow-hidden border border-indigo-500/40 bg-slate-950 shadow-2xl">
           <div className="px-5 py-4 bg-gradient-to-r from-indigo-950 to-fuchsia-950 border-b border-slate-800 flex justify-between items-center">
