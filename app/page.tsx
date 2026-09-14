@@ -34,7 +34,7 @@ export default function Home() {
     },
   ]);
 
-  const stores = ['All', 'Amazon', 'AliExpress', 'Temu', 'Alibaba'];
+  const stores = ['All', 'Amazon', 'AliExpress', 'Temu', 'Alibaba', 'Banggood', 'CJ Affiliate', 'Awin'];
 
   const categories = [
     'All', 'Electronics', 'Home Appliances', 'Computer & Office', 'Home & Garden',
@@ -200,7 +200,7 @@ export default function Home() {
         <div className="relative z-10">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600/20 to-fuchsia-600/20 border border-indigo-500/30 px-4 py-2 rounded-full text-xs md:text-sm font-semibold mb-6 animate-fade-in">
             <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
-            🚀 ULTIMATE PRICE TRACKING & DEAL FINDER
+             ULTIMATE PRICE TRACKING & DEAL FINDER
           </div>
 
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 animate-slide-up">
@@ -208,7 +208,7 @@ export default function Home() {
           </h2>
           
           <p className="text-slate-400 max-w-3xl mx-auto text-base md:text-lg mb-10 px-4 leading-relaxed animate-slide-up" style={{animationDelay: '0.2s'}}>
-            Discover top-rated products from AliExpress, Amazon, Temu, and Alibaba.
+            Discover top-rated products from AliExpress, Amazon, Temu, Alibaba, Banggood, CJ Affiliate, and Awin.
             <br className="hidden md:block" />
             Real-time market monitoring delivers instant notifications straight to your inbox.
           </p>
