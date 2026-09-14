@@ -263,41 +263,14 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="hidden md:flex justify-center">
-              <div className="relative w-full max-w-[620px]">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/30 to-indigo-900/30 rounded-3xl blur-3xl" />
-                <div className="relative rounded-3xl border border-blue-500/30 bg-gradient-to-br from-slate-900 to-slate-950 p-8 shadow-2xl overflow-hidden">
-                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-20">
-                    <div className="relative">
-                      <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center shadow-2xl border-4 border-slate-900">
-                        <div className="text-5xl">🤖</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-16 rounded-2xl bg-slate-800 p-6 border border-slate-700">
-                    <div className="flex items-center gap-6">
-                      <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center text-7xl shadow-inner">🎧</div>
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="text-slate-400 text-sm">Best Deal</span>
-                          <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold">Save 42%</span>
-                        </div>
-                        <h3 className="text-2xl font-black text-white">Premium Headphones</h3>
-                        <p className="line-through text-slate-500 mt-1">$149.99</p>
-                        <div className="flex items-baseline gap-2">
-                          <p className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-fuchsia-500">$89.99</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="absolute -top-4 -right-4 px-5 py-3 rounded-2xl bg-gradient-to-r from-blue-600 to-fuchsia-600 shadow-2xl z-10">
-                    <p className="font-black text-sm text-white">Better Deals</p>
-                    <p className="font-black text-sm text-white">Smarter Shopping</p>
-                    <p className="text-blue-100 text-xs">With AI ✨</p>
-                  </div>
-                </div>
+            {/* HERO IMAGE SECTION */}
+            <div className="hidden lg:flex justify-center items-center relative">
+              <div className="relative w-full max-w-[580px] rounded-3xl overflow-hidden border border-blue-500/30 bg-slate-900/50 backdrop-blur-xl shadow-2xl p-2">
+                <img 
+                  src="https://chatgpt.com/c/6aa3f9af-fec4-83eb-9c65-670f57f6f9ed/files/image_2.png" 
+                  alt="SmartPick Pro Hero Visual" 
+                  className="w-full h-auto rounded-2xl object-cover"
+                />
               </div>
             </div>
           </div>
