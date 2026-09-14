@@ -269,7 +269,7 @@ export default function Home() {
 
   const categoryIcon = (category: string) => {
     const icons: Record<string, string> = {
-      All: '▦',
+      All: '',
       Electronics: '◈',
       'Home Appliances': '⌂',
       'Computer & Office': '▣',
@@ -292,7 +292,7 @@ export default function Home() {
       Furniture: '▤',
       'Kitchen & Dining': '♨',
       'Bedding & Bath': '▱',
-      'Home Decor': '✧',
+      'Home Decor': '',
       'Pet Supplies': '●',
       'Office & School Supplies': '▤',
       'Security & Protection': '⬟',
@@ -332,7 +332,7 @@ export default function Home() {
 
           <div className="flex items-center gap-3 shrink-0">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-fuchsia-600 flex items-center justify-center text-xl shadow-lg">
-              🛍️
+              ️
             </div>
 
             <h1 className="text-xl font-black">
@@ -346,7 +346,7 @@ export default function Home() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search premium products..."
-                className="w-full h-11 rounded-full bg-slate-900 border border-slate-700 px-5 pr-12 text-sm outline-none focus:border-indigo-500"
+                className="w-full h-11 rounded-full bg-slate-900 border border-slate-700 px-5 pr-12 text-sm outline-none focus:border-indigo-500 transition-all"
               />
 
               <span className="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400 text-xl">
@@ -358,14 +358,14 @@ export default function Home() {
           <div className="ml-auto flex gap-2">
             <button
               onClick={() => setIsChatOpen(true)}
-              className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-blue-500 to-fuchsia-600 text-sm font-bold shadow-lg"
+              className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-blue-500 to-fuchsia-600 text-sm font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105"
             >
               ✨ AI Shopper
             </button>
 
             <button
               onClick={handleSignIn}
-              className="hidden sm:block px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-sm font-bold"
+              className="hidden sm:block px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-sm font-bold hover:bg-slate-800 transition-all"
             >
               Sign In
             </button>
@@ -428,10 +428,22 @@ export default function Home() {
               </p>
 
               <div className="flex flex-wrap gap-6 mt-8 text-sm text-slate-300">
-                <span>⚡ Real-time Deals</span>
-                <span>🛡️ Trusted Stores</span>
-                <span>🌐 Global Shipping</span>
-                <span>✦ AI-Powered</span>
+                <span className="flex items-center gap-2">
+                  <span className="text-yellow-400">⚡</span>
+                  Real-time Deals
+                </span>
+                <span className="flex items-center gap-2">
+                  <span className="text-red-400">️</span>
+                  Trusted Stores
+                </span>
+                <span className="flex items-center gap-2">
+                  <span className="text-blue-400">🌐</span>
+                  Global Shipping
+                </span>
+                <span className="flex items-center gap-2">
+                  <span className="text-purple-400">✦</span>
+                  AI-Powered
+                </span>
               </div>
 
             </div>
@@ -468,7 +480,7 @@ export default function Home() {
                     <div className="flex items-center gap-6">
 
                       <div className="w-28 h-28 rounded-2xl bg-slate-700 flex items-center justify-center text-6xl">
-                        🎧
+                        
                       </div>
 
                       <div>
@@ -508,7 +520,7 @@ export default function Home() {
                 </div>
 
                 <div className="absolute -bottom-8 left-0 w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-fuchsia-600 flex items-center justify-center text-4xl shadow-xl">
-                  🤖
+                  
                 </div>
 
               </div>
@@ -550,7 +562,6 @@ export default function Home() {
                     }`}
                   >
 
-                    {/* ONE CLEAN STORE NAME */}
                     <span className="store-brand">
                       {store === 'All' ? 'All Stores' : store}
                     </span>
@@ -607,12 +618,12 @@ export default function Home() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email address"
-                className="flex-1 lg:w-72 px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 outline-none focus:border-indigo-500"
+                className="flex-1 lg:w-72 px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 outline-none focus:border-indigo-500 transition-all"
               />
 
               <button
                 type="submit"
-                className="px-5 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-fuchsia-600 font-bold"
+                className="px-5 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-fuchsia-600 font-bold hover:shadow-lg transition-all"
               >
                 Subscribe
               </button>
@@ -851,7 +862,7 @@ export default function Home() {
                         onClick={() =>
                           handleBuyNow(product.affiliate_url)
                         }
-                        className="flex-1 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 font-bold text-sm"
+                        className="flex-1 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 font-bold text-sm hover:shadow-lg transition-all"
                       >
                         Buy Now
                       </button>
@@ -861,7 +872,7 @@ export default function Home() {
                         onClick={() =>
                           handleSetAlert(product.title)
                         }
-                        className="w-12 rounded-xl bg-slate-800 border border-slate-700"
+                        className="w-12 rounded-xl bg-slate-800 border border-slate-700 hover:bg-slate-700 transition-all"
                       >
                         🔔
                       </button>
