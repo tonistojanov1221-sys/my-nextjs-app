@@ -23,56 +23,55 @@ interface Product {
 
 const StoreLogo = ({ name }: { name: string }) => {
   switch (name) {
-    case 'All':
-      return <span className="text-2xl">🏪</span>;
     case 'Amazon':
       return (
-        <svg viewBox="0 0 120 30" className="h-6">
-          <text x="5" y="20" fill="#FF9900" fontSize="16" fontWeight="bold" fontFamily="Arial">amazon</text>
-          <path d="M15 22 Q35 28 55 22" stroke="#FF9900" strokeWidth="2" fill="none"/>
-          <path d="M50 20 L55 22 L53 17" stroke="#FF9900" strokeWidth="2" fill="none"/>
+        <svg className="h-6 w-auto" viewBox="0 0 500 150" fill="none">
+          <path d="M309.2 116.3c-23.7 17.5-58.1 26.8-88 26.8-41.9 0-79.6-15.5-108.1-41.4-2.2-2-0.2-4.7 2.4-3.2 30.7 17.7 68.8 28.3 108 28.3 26.6 0 55.9-6.3 82.2-19.4 4-2 7.7 3.3 3.5 8.9z" fill="#FF9900"/>
+          <path d="M320.8 103.8c-2.8-3.6-18.4-1.7-25.2-0.9-2.1 0.2-2.4-1.6-0.5-2.9 12.3-8.6 32.5-6.1 34.9-3.2 2.4 2.9-0.7 23.3-12.3 32.8-1.8 1.5-3.5 0.7-2.7-1.3 2.6-6.8 8.6-20.9 5.8-24.5z" fill="#FF9900"/>
+          <path d="M108.4 68.3c0-8 6.5-14.5 14.5-14.5s14.5 6.5 14.5 14.5v28.8h17.2V68.3c0-17.5-14.2-31.7-31.7-31.7s-31.7 14.2-31.7 31.7v28.8h17.2V68.3z" fill="#FFFFFF"/>
+          <text x="10" y="95" fill="#FFFFFF" fontSize="70" fontWeight="bold" fontFamily="sans-serif">amazon</text>
         </svg>
       );
     case 'AliExpress':
       return (
-        <svg viewBox="0 0 120 30" className="h-6">
-          <text x="5" y="20" fill="#FF4747" fontSize="14" fontWeight="bold" fontFamily="Arial">AliExpress</text>
-        </svg>
+        <span className="font-black text-red-500 text-lg tracking-tight flex items-center gap-1">
+          <span className="bg-red-600 text-white text-xs px-1.5 py-0.5 rounded font-black">Ali</span>
+          <span className="text-red-500 font-extrabold italic">Express</span>
+        </span>
       );
     case 'Temu':
       return (
-        <svg viewBox="0 0 80 30" className="h-6">
-          <rect x="0" y="5" width="22" height="20" rx="4" fill="#FB7701"/>
-          <text x="28" y="20" fill="#FB7701" fontSize="16" fontWeight="bold" fontFamily="Arial">Temu</text>
-        </svg>
+        <div className="flex items-center gap-1.5">
+          <span className="bg-orange-500 text-white font-black text-xs px-1.5 py-1 rounded-md">TEMU</span>
+        </div>
       );
     case 'Alibaba':
       return (
-        <svg viewBox="0 0 120 30" className="h-6">
-          <text x="5" y="20" fill="#FF6A00" fontSize="16" fontWeight="bold" fontFamily="Arial">Alibaba</text>
-        </svg>
+        <span className="font-black text-orange-500 text-base tracking-tight italic flex items-center gap-1">
+          <span className="text-xl font-extrabold">e</span>Alibaba.com
+        </span>
       );
     case 'Banggood':
       return (
-        <svg viewBox="0 0 120 30" className="h-6">
-          <text x="5" y="20" fill="#24B3FF" fontSize="16" fontWeight="bold" fontFamily="Arial">Banggood</text>
-        </svg>
+        <span className="font-black text-blue-400 text-base tracking-tight">
+          Bang<span className="text-orange-500">good</span>
+        </span>
       );
     case 'CJ Affiliate':
       return (
-        <svg viewBox="0 0 130 30" className="h-6">
-          <circle cx="12" cy="15" r="9" fill="#00D084"/>
-          <text x="26" y="20" fill="#00D084" fontSize="14" fontWeight="bold" fontFamily="Arial">CJ Affiliate</text>
-        </svg>
+        <span className="font-black text-emerald-400 text-base tracking-tight flex items-center gap-1">
+          <span className="w-5 h-5 rounded-full bg-emerald-500 text-black text-xs flex items-center justify-center font-bold">CJ</span>
+          Affiliate
+        </span>
       );
     case 'Awin':
       return (
-        <svg viewBox="0 0 80 30" className="h-6">
-          <text x="5" y="20" fill="#E3007B" fontSize="16" fontWeight="bold" fontFamily="Arial">Awin</text>
-        </svg>
+        <span className="font-black text-pink-500 text-base tracking-tight flex items-center gap-1">
+          <span className="text-pink-500 font-black text-lg">AWIN</span>
+        </span>
       );
     default:
-      return <span>{name}</span>;
+      return <span className="font-bold text-slate-200">{name}</span>;
   }
 };
 
@@ -98,16 +97,23 @@ export default function Home() {
   ];
 
   const categories = [
-    'All', 'Electronics', 'Home Appliances', 'Computer & Office', 'Home & Garden',
-    'Sports & Entertainment', 'Toys & Hobbies', 'Beauty & Health', 'Jewelry & Accessories',
-    'Phones & Telecommunications', 'Consumer Electronics', 'Lights & Lighting', 'Watches',
-    "Men's Clothing", "Women's Clothing", 'Shoes', 'Bags & Luggage', 'Mother & Kids',
-    'Automobiles & Motorcycles', 'Tools & Home Improvement', 'Furniture', 'Kitchen & Dining',
-    'Bedding & Bath', 'Home Decor', 'Pet Supplies', 'Office & School Supplies',
-    'Security & Protection', 'Garden Supplies', 'Musical Instruments', 'Video Games',
-    'Camera & Photo', 'Smart Devices', 'Audio & Video', 'Gaming Accessories',
-    'Fitness Equipment', 'Outdoor & Camping', 'Travel & Luggage', 'Personal Care',
-    'Hair Care', 'Makeup', 'Skin Care', 'Health Care', 'Baby Products',
+    { name: 'All', icon: '▦' },
+    { name: 'Electronics', icon: '💻' },
+    { name: 'Computers & Accessories', icon: '🖥️' },
+    { name: 'Cell Phones', icon: '📱' },
+    { name: 'Clothing', icon: '👕' },
+    { name: 'Beauty', icon: '💅' },
+    { name: 'Home & Kitchen', icon: '🏠' },
+    { name: 'Tools', icon: '🔧' },
+    { name: 'Automotive', icon: '🚗' },
+    { name: 'Sports', icon: '⚽' },
+    { name: 'Toys', icon: '🧸' },
+    { name: 'Baby', icon: '👶' },
+    { name: 'Pet', icon: '🐾' },
+    { name: 'Health', icon: '🩺' },
+    { name: 'Groceries', icon: '🛒' },
+    { name: 'Music', icon: '🎵' },
+    { name: 'Video Games', icon: '🎮' },
   ];
 
   useEffect(() => {
@@ -209,25 +215,6 @@ export default function Home() {
     element?.scrollBy({ left: direction === 'left' ? -350 : 350, behavior: 'smooth' });
   };
 
-  const categoryIcon = (category: string) => {
-    const icons: Record<string, string> = {
-      All: '🏪', Electronics: '📱', 'Home Appliances': '🏠', 'Computer & Office': '💻',
-      'Home & Garden': '🏡', 'Sports & Entertainment': '⚽', 'Toys & Hobbies': '🎮',
-      'Beauty & Health': '💄', 'Jewelry & Accessories': '💍', 'Phones & Telecommunications': '📞',
-      'Consumer Electronics': '📺', 'Lights & Lighting': '💡', Watches: '⌚',
-      "Men's Clothing": '👔', "Women's Clothing": '👗', Shoes: '👟', 'Bags & Luggage': '👜',
-      'Mother & Kids': '👶', 'Automobiles & Motorcycles': '🚗', 'Tools & Home Improvement': '🔧',
-      Furniture: '🛋️', 'Kitchen & Dining': '🍽️', 'Bedding & Bath': '🛏️', 'Home Decor': '🖼️',
-      'Pet Supplies': '🐾', 'Office & School Supplies': '📚', 'Security & Protection': '🔒',
-      'Garden Supplies': '🌱', 'Musical Instruments': '🎸', 'Video Games': '🎮',
-      'Camera & Photo': '📷', 'Smart Devices': '🤖', 'Audio & Video': '🎧',
-      'Gaming Accessories': '🎮', 'Fitness Equipment': '💪', 'Outdoor & Camping': '⛺',
-      'Travel & Luggage': '✈️', 'Personal Care': '🧴', 'Hair Care': '💇',
-      Makeup: '💋', 'Skin Care': '✨', 'Health Care': '💊', 'Baby Products': '🍼',
-    };
-    return icons[category] || '📦';
-  };
-
   return (
     <main className="min-h-screen bg-[#020817] text-white overflow-x-hidden">
       <div className="fixed inset-0 pointer-events-none">
@@ -237,23 +224,20 @@ export default function Home() {
 
       <header className="sticky top-0 z-50 border-b border-white/10 bg-[#020817]/90 backdrop-blur-xl">
         <div className="max-w-[1440px] mx-auto px-5 md:px-8 h-[72px] flex items-center gap-5">
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-3 shrink-0 cursor-pointer" onClick={() => { setSelectedStore('All'); setSelectedCategory('All'); }}>
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-fuchsia-600 flex items-center justify-center text-xl shadow-lg">🛍️</div>
             <h1 className="text-xl font-black">SmartPick <span className="gradient-text">Pro</span></h1>
           </div>
           <div className="hidden md:block flex-1 max-w-2xl mx-auto">
             <div className="relative">
               <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search premium products..." className="w-full h-11 rounded-full bg-slate-900 border border-slate-700 px-5 pr-12 text-sm outline-none focus:border-indigo-500 transition-all" />
-              <span className="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400 text-xl">⌕</span>
+              <span className="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400 text-xl">🔍</span>
             </div>
           </div>
           <div className="ml-auto flex gap-2">
             <button onClick={() => setIsChatOpen(true)} className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-blue-500 to-fuchsia-600 text-sm font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105">✨ AI Shopper</button>
             <button onClick={handleSignIn} className="hidden sm:block px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-sm font-bold hover:bg-slate-800 transition-all">Sign In</button>
           </div>
-        </div>
-        <div className="md:hidden px-4 pb-3">
-          <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search products..." className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 outline-none" />
         </div>
       </header>
 
@@ -288,16 +272,10 @@ export default function Home() {
                       <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center shadow-2xl border-4 border-slate-900">
                         <div className="text-5xl">🤖</div>
                       </div>
-                      <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-16 h-3 bg-blue-500/50 blur-md" />
                     </div>
                   </div>
 
                   <div className="mt-16 rounded-2xl bg-slate-800 p-6 border border-slate-700">
-                    <div className="flex gap-2 mb-4">
-                      <span className="w-3 h-3 bg-red-500 rounded-full" />
-                      <span className="w-3 h-3 bg-yellow-500 rounded-full" />
-                      <span className="w-3 h-3 bg-green-500 rounded-full" />
-                    </div>
                     <div className="flex items-center gap-6">
                       <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center text-7xl shadow-inner">🎧</div>
                       <div className="flex-1">
@@ -314,39 +292,38 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="absolute -right-4 top-24 w-28 rounded-2xl bg-slate-800 border border-slate-700 p-3 shadow-xl hidden lg:block">
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2 text-xs text-slate-300"><span className="text-blue-400">🔔</span> Price Alerts</div>
-                      <div className="flex items-center gap-2 text-xs text-slate-300"><span className="text-blue-400">📊</span> Track Prices</div>
-                      <div className="flex items-center gap-2 text-xs text-slate-300"><span className="text-blue-400">🔍</span> Find Deals</div>
-                      <div className="flex items-center gap-2 text-xs text-slate-300"><span className="text-blue-400">💰</span> Save Money</div>
-                    </div>
-                  </div>
-
                   <div className="absolute -top-4 -right-4 px-5 py-3 rounded-2xl bg-gradient-to-r from-blue-600 to-fuchsia-600 shadow-2xl z-10">
                     <p className="font-black text-sm text-white">Better Deals</p>
                     <p className="font-black text-sm text-white">Smarter Shopping</p>
                     <p className="text-blue-100 text-xs">With AI ✨</p>
                   </div>
-
-                  <div className="absolute -bottom-6 -left-6 w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-fuchsia-600 flex items-center justify-center text-5xl shadow-2xl z-10">🤖</div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
+        {/* TOP STORES SECTION */}
         <section className="max-w-[1440px] mx-auto px-5 md:px-8 mb-8">
           <div className="store-wrapper">
             <button type="button" onClick={() => scrollStores('left')} className="scroll-arrow" aria-label="Scroll stores left">←</button>
             <div id="stores-scroll" className="stores-scroll">
               <div className="stores-inner">
                 {stores.map((store) => (
-                  <button key={store} type="button" onClick={() => setSelectedStore(store)} className={`store-button ${selectedStore === store ? 'store-active' : ''}`}>
-                    <div className="flex items-center justify-center gap-2 w-full">
+                  <button 
+                    key={store} 
+                    type="button" 
+                    onClick={() => setSelectedStore(store)} 
+                    className={`store-button ${selectedStore === store ? 'store-active' : ''}`}
+                  >
+                    {store === 'All' ? (
+                      <span className="flex items-center gap-2">
+                        <span>🏪</span>
+                        <span>All Stores</span>
+                      </span>
+                    ) : (
                       <StoreLogo name={store} />
-                      <span className="store-brand">{store === 'All' ? 'All Stores' : store}</span>
-                    </div>
+                    )}
                   </button>
                 ))}
               </div>
@@ -355,6 +332,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* NEWSLETTER */}
         <section className="max-w-[1440px] mx-auto px-5 md:px-8 mb-10">
           <div className="newsletter">
             <div className="newsletter-icon">✉</div>
@@ -369,32 +347,34 @@ export default function Home() {
           </div>
         </section>
 
+        {/* SHOP BY CATEGORY */}
         <section className="max-w-[1440px] mx-auto px-5 md:px-8 mb-12">
           <div className="flex items-center justify-between mb-5">
             <h2 className="text-2xl font-black"><span className="text-blue-400">▦</span> Shop by Category</h2>
             <span className="text-sm text-slate-400">40+ Categories</span>
           </div>
-          <div className="hidden md:flex items-center gap-3">
+          <div className="flex items-center gap-3">
             <button type="button" onClick={() => scrollCategories('left')} className="scroll-arrow" aria-label="Scroll categories left">←</button>
             <div id="categories-scroll" className="categories-scroll">
               <div className="categories-inner">
-                {categories.map((category) => (
-                  <button key={category} type="button" onClick={() => setSelectedCategory(category)} className={`category-button ${selectedCategory === category ? 'category-active' : ''}`}>
-                    <span className="category-icon">{categoryIcon(category)}</span>
-                    <span>{category}</span>
+                {categories.map((cat) => (
+                  <button 
+                    key={cat.name} 
+                    type="button" 
+                    onClick={() => setSelectedCategory(cat.name)} 
+                    className={`category-button ${selectedCategory === cat.name ? 'category-active' : ''}`}
+                  >
+                    <span className="category-icon">{cat.icon}</span>
+                    <span>{cat.name}</span>
                   </button>
                 ))}
               </div>
             </div>
             <button type="button" onClick={() => scrollCategories('right')} className="scroll-arrow" aria-label="Scroll categories right">→</button>
           </div>
-          <div className="md:hidden">
-            <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)} className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700">
-              {categories.map((category) => (<option key={category} value={category}>{category}</option>))}
-            </select>
-          </div>
         </section>
 
+        {/* FEATURED DEALS */}
         <section className="max-w-[1440px] mx-auto px-5 md:px-8 pb-20">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl md:text-3xl font-black">🔥 Featured Deals</h2>
@@ -479,11 +459,10 @@ export default function Home() {
         .stores-scroll::-webkit-scrollbar-track { background: #0f172a; border-radius: 999px; border: 1px solid #1e293b; }
         .stores-scroll::-webkit-scrollbar-thumb { background: linear-gradient(90deg, #4f46e5, #a855f7); border-radius: 999px; border: 2px solid #0f172a; }
         .stores-scroll::-webkit-scrollbar-thumb:hover { background: #818cf8; }
-        .stores-inner { display: flex; gap: 10px; width: max-content; }
-        .store-button { min-width: 160px; height: 68px; padding: 0 18px; border-radius: 13px; border: 1px solid #274060; background: #08162d; color: #cbd5e1; display: flex; align-items: center; justify-content: center; white-space: nowrap; font-weight: 800; transition: all .25s ease; flex-shrink: 0; }
+        .stores-inner { display: flex; gap: 12px; width: max-content; }
+        .store-button { min-width: 140px; height: 56px; padding: 0 20px; border-radius: 13px; border: 1px solid #1e293b; background: #08162d; color: #cbd5e1; display: flex; align-items: center; justify-content: center; white-space: nowrap; font-size: 15px; font-weight: 800; transition: all .25s ease; flex-shrink: 0; cursor: pointer; }
         .store-button:hover { border-color: #6366f1; transform: translateY(-2px); color: white; }
-        .store-active { background: linear-gradient(135deg, #4f46e5, #c026d3); border-color: #a855f7; color: white; box-shadow: 0 0 25px rgba(139,92,246,.3); }
-        .store-brand { display: block; font-size: 14px; font-weight: 900; line-height: 1; white-space: nowrap; text-align: center; }
+        .store-active { background: linear-gradient(135deg, #2563eb, #4f46e5); border-color: #60a5fa; color: white; box-shadow: 0 0 20px rgba(37,99,235,.4); }
         .scroll-arrow { flex-shrink: 0; width: 42px; height: 42px; border-radius: 50%; border: 1px solid #334155; background: #16243b; color: white; font-size: 19px; font-weight: 900; display: flex; align-items: center; justify-content: center; transition: all .2s ease; cursor: pointer; }
         .scroll-arrow:hover { background: #4f46e5; border-color: #818cf8; transform: scale(1.05); }
         .newsletter { display: flex; align-items: center; gap: 22px; padding: 24px; border: 1px solid rgba(59,130,246,.35); border-radius: 18px; background: linear-gradient(90deg, #091b45, #101a45); }
@@ -493,13 +472,13 @@ export default function Home() {
         .categories-scroll::-webkit-scrollbar-track { background: #0f172a; border-radius: 999px; border: 1px solid #1e293b; }
         .categories-scroll::-webkit-scrollbar-thumb { background: linear-gradient(90deg, #4f46e5, #a855f7); border-radius: 999px; border: 3px solid #0f172a; }
         .categories-scroll::-webkit-scrollbar-thumb:hover { background: #818cf8; }
-        .categories-inner { display: flex; gap: 10px; width: max-content; }
-        .category-button { width: 112px; min-width: 112px; height: 108px; border-radius: 17px; border: 1px solid #1e293b; background: #08162d; color: #94a3b8; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; transition: all .25s ease; flex-shrink: 0; cursor: pointer; }
+        .categories-inner { display: flex; gap: 12px; width: max-content; }
+        .category-button { width: 100px; min-width: 100px; height: 100px; border-radius: 16px; border: 1px solid #1e293b; background: #08162d; color: #94a3b8; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; transition: all .25s ease; flex-shrink: 0; cursor: pointer; }
         .category-button:hover { color: white; border-color: #6366f1; transform: translateY(-2px); }
-        .category-active { background: linear-gradient(145deg, #4f46e5, #7c3aed); color: white; border-color: #818cf8; box-shadow: 0 10px 30px rgba(79,70,229,.3); }
-        .category-icon { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(59,130,246,.12); color: #60a5fa; font-size: 21px; }
-        .category-active .category-icon { color: white; background: rgba(255,255,255,.15); }
-        .category-button > span:last-child { font-size: 10px; font-weight: 800; text-align: center; line-height: 1.15; }
+        .category-active { background: linear-gradient(145deg, #2563eb, #4f46e5); color: white; border-color: #60a5fa; box-shadow: 0 10px 25px rgba(37,99,235,.35); }
+        .category-icon { width: 42px; height: 42px; border-radius: 14px; display: flex; align-items: center; justify-content: center; background: rgba(37,99,235,.2); color: #60a5fa; font-size: 20px; }
+        .category-active .category-icon { color: white; background: rgba(255,255,255,.2); }
+        .category-button > span:last-child { font-size: 11px; font-weight: 700; text-align: center; line-height: 1.2; padding: 0 4px; }
         .product-card { overflow: hidden; border-radius: 18px; border: 1px solid #172554; background: linear-gradient(145deg, rgba(15,31,60,.95), rgba(7,18,38,.98)); transition: all .3s ease; }
         .product-card:hover { transform: translateY(-5px); border-color: #6366f1; box-shadow: 0 20px 40px rgba(0,0,0,.35); }
         .product-image { height: 210px; position: relative; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(59,130,246,.14), transparent 65%); }
@@ -508,7 +487,7 @@ export default function Home() {
         .deal-badge { padding: 5px 9px; border-radius: 999px; background: rgba(16,185,129,.15); color: #34d399; font-size: 10px; font-weight: 900; }
         .empty-box { padding: 70px 20px; border-radius: 18px; border: 1px solid #1e293b; background: #08111f; text-align: center; }
         @media (max-width: 900px) { .newsletter { flex-direction: column; align-items: stretch; } }
-        @media (max-width: 640px) { .store-wrapper { padding: 10px; } .store-button { min-width: 140px; height: 60px; } .scroll-arrow { width: 36px; height: 36px; } .store-brand { font-size: 13px; } }
+        @media (max-width: 640px) { .store-wrapper { padding: 10px; } .store-button { min-width: 120px; height: 50px; } .scroll-arrow { width: 36px; height: 36px; } }
       `}</style>
     </main>
   );
