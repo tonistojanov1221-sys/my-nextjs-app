@@ -248,11 +248,13 @@ export default function Home() {
                 key={store}
                 type="button"
                 onClick={() => setSelectedStore(store)}
-                className={`px-4 md:px-6 py-2 md:py-3 rounded-lg text-xs md:text-sm font-bold whitespace-nowrap border-2 transition-all duration-300 ${
-                  isActive
-                    ? 'bg-fuchsia-600 border-fuchsia-500 text-white shadow-lg shadow-fuchsia-500/30'
-                    : 'bg-slate-900 border-slate-700 text-slate-300 hover:bg-slate-800'
-                }`}
+                className="px-4 md:px-6 py-2 md:py-3 rounded-lg text-xs md:text-sm font-bold whitespace-nowrap border-2 transition-all duration-300 flex-shrink-0"
+                style={{
+                  backgroundColor: isActive ? '#d946ef' : '#0f172a',
+                  borderColor: isActive ? '#e879f9' : '#334155',
+                  color: isActive ? 'white' : '#cbd5e1',
+                  boxShadow: isActive ? '0 0 20px rgba(217, 70, 239, 0.4)' : 'none',
+                }}
               >
                 {store}
               </button>
@@ -261,37 +263,85 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CATEGORIES - со скролање */}
+      {/* CATEGORIES - со стрелки и скролање */}
       <section className="w-full max-w-7xl px-4 md:px-6 mb-6 md:mb-12">
+        {/* Мобилна верзија */}
         <div className="md:hidden mb-4">
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-lg text-sm focus:outline-none focus:border-indigo-500"
+            className="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-lg text-sm"
           >
             {categories.map((cat) => (
               <option key={cat} value={cat}>{cat}</option>
             ))}
           </select>
         </div>
-        <div className="hidden md:flex gap-2 overflow-x-auto pb-4 scrollbar-hide">
-          {categories.map((cat) => {
-            const isActive = cat === selectedCategory;
-            return (
-              <button
-                key={cat}
-                type="button"
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-lg text-xs font-medium whitespace-nowrap border transition-all duration-300 ${
-                  isActive
-                    ? 'bg-indigo-600 border-indigo-500 text-white shadow-lg shadow-indigo-500/30'
-                    : 'bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800'
-                }`}
-              >
-                {cat}
-              </button>
-            );
-          })}
+        
+        {/* Desktop верзија со стрелки */}
+        <div className="hidden md:flex items-center gap-2">
+          {/* Лева стрелка */}
+          <button
+            type="button"
+            onClick={() => {
+              const container = document.getElementById('categories-scroll');
+              if (container) container.scrollBy({ left: -200, behavior: 'smooth' });
+            }}
+            className="flex-shrink-0 w-10 h-10 rounded-lg bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-white transition-colors"
+          >
+            ←
+          </button>
+
+          {/* Категории */}
+          <div 
+            id="categories-scroll"
+            className="flex-1 overflow-x-auto scrollbar-hide"
+            style={{
+              scrollBehavior: 'smooth',
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+            }}
+          >
+            <div className="flex gap-2" style={{ flexWrap: 'nowrap' }}>
+              {categories.map((cat) => {
+                const isActive = cat === selectedCategory;
+                return (
+                  <button
+                    key={cat}
+                    type="button"
+                    onClick={() => setSelectedCategory(cat)}
+                    style={{
+                      flexShrink: 0,
+                      whiteSpace: 'nowrap',
+                      padding: '8px 16px',
+                      borderRadius: '8px',
+                      fontSize: '12px',
+                      fontWeight: 500,
+                      border: `1px solid ${isActive ? '#6366f1' : '#1e293b'}`,
+                      backgroundColor: isActive ? '#4f46e5' : '#0f172a',
+                      color: isActive ? 'white' : '#cbd5e1',
+                      cursor: 'pointer',
+                      transition: 'all 0.3s ease',
+                    }}
+                  >
+                    {cat}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Десна стрелка */}
+          <button
+            type="button"
+            onClick={() => {
+              const container = document.getElementById('categories-scroll');
+              if (container) container.scrollBy({ left: 200, behavior: 'smooth' });
+            }}
+            className="flex-shrink-0 w-10 h-10 rounded-lg bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-white transition-colors"
+          >
+            →
+          </button>
         </div>
       </section>
 
