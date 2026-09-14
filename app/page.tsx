@@ -238,34 +238,74 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STORE TABS */}
+      {/* STORE TABS - со стрелки */}
       <section className="w-full max-w-7xl px-4 md:px-6 mb-4 md:mb-6">
-        <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
-          {stores.map((store) => {
-            const isActive = store === selectedStore;
-            return (
-              <button
-                key={store}
-                type="button"
-                onClick={() => setSelectedStore(store)}
-                className="px-4 md:px-6 py-2 md:py-3 rounded-lg text-xs md:text-sm font-bold whitespace-nowrap border-2 transition-all duration-300 flex-shrink-0"
-                style={{
-                  backgroundColor: isActive ? '#d946ef' : '#0f172a',
-                  borderColor: isActive ? '#e879f9' : '#334155',
-                  color: isActive ? 'white' : '#cbd5e1',
-                  boxShadow: isActive ? '0 0 20px rgba(217, 70, 239, 0.4)' : 'none',
-                }}
-              >
-                {store}
-              </button>
-            );
-          })}
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => {
+              const container = document.getElementById('stores-scroll');
+              if (container) container.scrollBy({ left: -150, behavior: 'smooth' });
+            }}
+            className="flex-shrink-0 w-10 h-10 rounded-lg bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-white transition-colors"
+          >
+            ←
+          </button>
+
+          <div 
+            id="stores-scroll"
+            className="flex-1 overflow-x-auto scrollbar-hide"
+            style={{
+              scrollBehavior: 'smooth',
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+            }}
+          >
+            <div className="flex gap-2" style={{ flexWrap: 'nowrap' }}>
+              {stores.map((store) => {
+                const isActive = store === selectedStore;
+                return (
+                  <button
+                    key={store}
+                    type="button"
+                    onClick={() => setSelectedStore(store)}
+                    style={{
+                      flexShrink: 0,
+                      whiteSpace: 'nowrap',
+                      padding: '8px 24px',
+                      borderRadius: '8px',
+                      fontSize: '14px',
+                      fontWeight: 700,
+                      border: `2px solid ${isActive ? '#e879f9' : '#334155'}`,
+                      backgroundColor: isActive ? '#d946ef' : '#0f172a',
+                      color: isActive ? 'white' : '#cbd5e1',
+                      cursor: 'pointer',
+                      transition: 'all 0.3s ease',
+                      boxShadow: isActive ? '0 0 20px rgba(217, 70, 239, 0.4)' : 'none',
+                    }}
+                  >
+                    {store}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => {
+              const container = document.getElementById('stores-scroll');
+              if (container) container.scrollBy({ left: 150, behavior: 'smooth' });
+            }}
+            className="flex-shrink-0 w-10 h-10 rounded-lg bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-white transition-colors"
+          >
+            →
+          </button>
         </div>
       </section>
 
-      {/* CATEGORIES - со стрелки и скролање */}
+      {/* CATEGORIES - со стрелки */}
       <section className="w-full max-w-7xl px-4 md:px-6 mb-6 md:mb-12">
-        {/* Мобилна верзија */}
         <div className="md:hidden mb-4">
           <select
             value={selectedCategory}
@@ -278,9 +318,7 @@ export default function Home() {
           </select>
         </div>
         
-        {/* Desktop верзија со стрелки */}
         <div className="hidden md:flex items-center gap-2">
-          {/* Лева стрелка */}
           <button
             type="button"
             onClick={() => {
@@ -292,7 +330,6 @@ export default function Home() {
             ←
           </button>
 
-          {/* Категории */}
           <div 
             id="categories-scroll"
             className="flex-1 overflow-x-auto scrollbar-hide"
@@ -331,7 +368,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Десна стрелка */}
           <button
             type="button"
             onClick={() => {
