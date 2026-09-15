@@ -142,13 +142,20 @@ export default function Home() {
     }
   };
 
+  // ============================================
+  // STORE LOGOS - VISTINSKI BRENDIRANI LOGOA
+  // ============================================
   const storeLogoUrl = (store: string) => {
-    const domains: Record<string, string> = {
-      Amazon: 'amazon.com', AliExpress: 'aliexpress.com', Temu: 'temu.com',
-      Alibaba: 'alibaba.com', Banggood: 'banggood.com', 'CJ Affiliate': 'cj.com', Awin: 'awin.com',
+    const logos: Record<string, string> = {
+      Amazon: 'https://cdn.simpleicons.org/amazon/FF9900',
+      AliExpress: 'https://cdn.simpleicons.org/aliexpress/FF4747',
+      Temu: 'https://cdn.simpleicons.org/temu/FF6B00',
+      Alibaba: 'https://cdn.simpleicons.org/alibabadotcom/FF6A00',
+      Banggood: 'https://cdn.simpleicons.org/banggood/FF6B00',
+      'CJ Affiliate': 'https://cdn.simpleicons.org/cj/FF6600',
+      Awin: 'https://cdn.simpleicons.org/awin/0073FF',
     };
-    const domain = domains[store];
-    return domain ? `https://logo.clearbit.com/${domain}` : null;
+    return logos[store] || null;
   };
 
   const categoryIcon = (category: string) => {
@@ -289,7 +296,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* STORE BAR */}
+        {/* STORE BAR - BELA POZADINA + VISTINSKI LOGOA */}
         <section className="max-w-[1440px] mx-auto px-5 md:px-8 mb-10">
           <div className="rounded-2xl bg-[#12161F] border border-white/5 p-5">
             <div className="flex items-center justify-between mb-4">
@@ -309,30 +316,38 @@ export default function Home() {
                 className="flex-1 min-w-0 overflow-x-auto py-1 hide-scrollbar"
                 style={{ WebkitOverflowScrolling: 'touch' }}
               >
-                <div className="flex gap-2 flex-nowrap w-max">
+                <div className="flex gap-3 flex-nowrap w-max">
                   {stores.map((store) => (
                     <button
                       key={store}
                       onClick={() => setSelectedStore(store)}
-                      className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border transition shrink-0 text-sm ${
+                      className={`flex items-center gap-2.5 px-4 py-3 rounded-xl border transition shrink-0 text-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 ${
                         selectedStore === store
                           ? 'bg-gradient-to-r from-blue-600 to-fuchsia-600 border-transparent shadow-lg text-white'
-                          : 'bg-[#0A0D14] border-white/10 text-slate-300 hover:border-white/20'
+                          : 'bg-white border-transparent text-slate-900 hover:bg-slate-50'
                       }`}
                     >
-                      <span className="w-5 h-5 rounded-md bg-white flex items-center justify-center overflow-hidden shrink-0">
-                        {storeLogoUrl(store) ? (
-                          <img
-                            src={storeLogoUrl(store) as string}
-                            alt={store}
-                            className="w-full h-full object-contain p-0.5"
-                            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-                          />
-                        ) : (
-                          <span className="text-slate-900 text-[9px] font-bold">SP</span>
-                        )}
+                      {storeLogoUrl(store) ? (
+                        <img
+                          src={storeLogoUrl(store) as string}
+                          alt={store}
+                          className="w-5 h-5 object-contain"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).style.display = 'none';
+                          }}
+                        />
+                      ) : (
+                        <span className={`w-5 h-5 rounded-md flex items-center justify-center text-[9px] font-bold ${
+                          selectedStore === store ? 'bg-white/20 text-white' : 'bg-slate-900 text-white'
+                        }`}>
+                          SP
+                        </span>
+                      )}
+                      <span className={`font-bold text-xs whitespace-nowrap ${
+                        selectedStore === store ? 'text-white' : 'text-slate-900'
+                      }`}>
+                        {store === 'All' ? 'All Stores' : store}
                       </span>
-                      <span className="font-bold text-xs whitespace-nowrap">{store === 'All' ? 'All Stores' : store}</span>
                     </button>
                   ))}
                 </div>
@@ -397,7 +412,7 @@ export default function Home() {
                   <button
                     key={cat}
                     onClick={() => setSelectedCategory(cat)}
-                    className={`flex items-center gap-2 px-3.5 py-2 rounded-xl border transition text-xs whitespace-nowrap shrink-0 ${
+                    className={`flex items-center gap-2 px-3.5 py-2 rounded-xl border transition text-xs whitespace-nowrap shrink-0 hover:-translate-y-0.5 ${
                       selectedCategory === cat
                         ? 'bg-indigo-600 border-indigo-500 text-white shadow-md'
                         : 'bg-[#12161F] border-white/10 text-slate-400 hover:border-white/20 hover:text-white'
