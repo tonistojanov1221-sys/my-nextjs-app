@@ -21,18 +21,12 @@ interface Product {
   created_at?: string;
 }
 
-// Converts vertical mouse-wheel scrolling into horizontal scrolling
-// for a horizontally-scrollable container. Defined at module scope,
-// as a proper reusable hook, rather than re-created on every render.
 function useWheelHorizontalScroll(ref: React.RefObject<HTMLDivElement | null>) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
 
     const onWheel = (e: WheelEvent) => {
-      // Only hijack the scroll when the gesture is predominantly
-      // vertical (a normal mouse wheel), so trackpad horizontal
-      // gestures still behave naturally.
       if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
         el.scrollLeft += e.deltaY;
         e.preventDefault();
@@ -164,23 +158,13 @@ export default function Home() {
 
       return matchesStore && matchesCategory && matchesQuery;
     });
-  }, [
-    products,
-    searchQuery,
-    selectedCategory,
-    selectedStore,
-  ]);
+  }, [products, searchQuery, selectedCategory, selectedStore]);
 
   const handleSubscribe = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-
       if (!email.trim()) return;
-
-      alert(
-        'Thank you! You are now subscribed to SmartPick Pro deals.'
-      );
-
+      alert('Thank you! You are now subscribed to SmartPick Pro deals.');
       setEmail('');
     },
     [email]
@@ -191,7 +175,6 @@ export default function Home() {
       alert('Affiliate link is not available yet.');
       return;
     }
-
     window.open(url, '_blank', 'noopener,noreferrer');
   }, []);
 
@@ -206,13 +189,8 @@ export default function Home() {
   const getRecommendations = useCallback(
     (message: string) => {
       const text = message.toLowerCase();
-
       const priceMatch = text.match(/\$?(\d+(\.\d+)?)/);
-
-      const maxPrice = priceMatch
-        ? parseFloat(priceMatch[1])
-        : null;
-
+      const maxPrice = priceMatch ? parseFloat(priceMatch[1]) : null;
       const words = text
         .replace(/[^a-z0-9\s.]/g, ' ')
         .split(/\s+/)
@@ -222,33 +200,13 @@ export default function Home() {
         .map((product) => {
           const haystack =
             `${product.title} ${product.description} ${product.category} ${product.tag} ${product.store}`.toLowerCase();
-
           let score = 0;
-
           words.forEach((word) => {
-            if (haystack.includes(word)) {
-              score++;
-            }
+            if (haystack.includes(word)) score++;
           });
-
-          if (
-            maxPrice !== null &&
-            product.price <= maxPrice
-          ) {
-            score++;
-          }
-
-          if (
-            maxPrice !== null &&
-            product.price > maxPrice
-          ) {
-            score -= 2;
-          }
-
-          return {
-            product,
-            score,
-          };
+          if (maxPrice !== null && product.price <= maxPrice) score++;
+          if (maxPrice !== null && product.price > maxPrice) score -= 2;
+          return { product, score };
         })
         .filter((item) => item.score > 0)
         .sort((a, b) => b.score - a.score)
@@ -261,18 +219,11 @@ export default function Home() {
   const handleSendChat = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-
       const text = chatInput.trim();
-
       if (!text) return;
 
       const matches = getRecommendations(text);
-
-      const userMessage: ChatMessage = {
-        role: 'user',
-        text,
-      };
-
+      const userMessage: ChatMessage = { role: 'user', text };
       let reply = '';
 
       if (matches.length === 0) {
@@ -294,12 +245,8 @@ export default function Home() {
       setChatMessages((prev) => [
         ...prev,
         userMessage,
-        {
-          role: 'assistant',
-          text: reply,
-        },
+        { role: 'assistant', text: reply },
       ]);
-
       setChatInput('');
     },
     [chatInput, getRecommendations]
@@ -404,14 +351,11 @@ export default function Home() {
       'Health Care': '♥',
       'Baby Products': '●',
     };
-
     return icons[category] || '•';
   };
 
   return (
     <main className="min-h-screen bg-[#020817] text-white overflow-x-hidden">
-
-      {/* BACKGROUND */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-indigo-700/20 blur-[160px]" />
         <div className="absolute top-[450px] -right-40 w-[550px] h-[550px] rounded-full bg-fuchsia-700/10 blur-[160px]" />
@@ -419,21 +363,14 @@ export default function Home() {
       </div>
 
       <div className="relative z-10">
-
-        {/* HEADER */}
         <header className="sticky top-0 z-50 border-b border-white/10 bg-[#020817]/95 backdrop-blur-xl">
           <div className="max-w-[1500px] mx-auto px-5 md:px-8 h-[78px] flex items-center gap-5">
-
             <div className="flex items-center gap-3 shrink-0">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-fuchsia-600 flex items-center justify-center text-2xl shadow-lg shadow-indigo-500/20">
                 🛍️
               </div>
-
               <h1 className="text-xl md:text-2xl font-black tracking-tight">
-                SmartPick{' '}
-                <span className="gradient-text">
-                  Pro
-                </span>
+                SmartPick <span className="gradient-text">Pro</span>
               </h1>
             </div>
 
@@ -441,13 +378,10 @@ export default function Home() {
               <div className="relative">
                 <input
                   value={searchQuery}
-                  onChange={(e) =>
-                    setSearchQuery(e.target.value)
-                  }
+                  onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search premium products..."
                   className="w-full h-12 rounded-full bg-slate-900/90 border border-slate-700 px-6 pr-14 text-sm outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
                 />
-
                 <span className="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400 text-xl">
                   🔍
                 </span>
@@ -462,7 +396,6 @@ export default function Home() {
               >
                 ✨ AI Shopper
               </button>
-
               <button
                 type="button"
                 onClick={handleSignIn}
@@ -476,81 +409,109 @@ export default function Home() {
           <div className="md:hidden px-4 pb-4">
             <input
               value={searchQuery}
-              onChange={(e) =>
-                setSearchQuery(e.target.value)
-              }
+              onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search products..."
               className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 outline-none"
             />
           </div>
         </header>
 
-        {/* HERO */}
-        <section className="max-w-[1500px] mx-auto px-5 md:px-8 pt-14 md:pt-20 pb-12">
-          {/* Hero Section with laptop, headphones, and AI robot */}
-          <div className="relative w-full max-w-6xl mx-auto my-8 p-6 md:p-10 rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 border border-slate-800 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+        {/* HERO SECTION - EXACTLY LIKE MAQUETTE */}
+        <section className="max-w-[1500px] mx-auto px-5 md:px-8 pt-8 md:pt-12 pb-8">
+          <div className="relative w-full max-w-6xl mx-auto p-6 md:p-12 rounded-3xl bg-gradient-to-br from-[#070e24] via-[#040816] to-[#02050f] border border-blue-900/30 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center justify-between gap-10">
             
-            {/* Left side: Text and title */}
-            <div className="flex-1 space-y-4 text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium">
+            {/* Left side text */}
+            <div className="flex-1 space-y-5 text-left z-10">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                AI-Powered Deal Finder
+                Live Tracking & Monitoring 40+ Categories
               </div>
-              <h1 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
-                ULTIMATE PRICE TRACKING & <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">DEAL FINDER</span>
+              <h1 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.1]">
+                ULTIMATE PRICE TRACKING & <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-fuchsia-500">
+                  DEAL FINDER
+                </span>
               </h1>
-              <p className="text-slate-400 text-sm md:text-base max-w-lg">
-                Never Overpay Again. Track Prices & Save Big with real-time global monitoring and smart AI assistance.
+              <p className="text-slate-400 text-sm md:text-base max-w-md font-normal leading-relaxed">
+                Never Overpay Again. Track Prices & Save Big.
               </p>
+
+              <div className="flex flex-wrap items-center gap-6 pt-2 text-xs font-semibold text-slate-300">
+                <span className="flex items-center gap-2">⚡ Real-time Deals</span>
+                <span className="flex items-center gap-2">🛡️ Trusted Stores</span>
+                <span className="flex items-center gap-2">🌐 Global Shipping</span>
+                <span className="flex items-center gap-2">🤖 AI-Powered</span>
+              </div>
             </div>
 
-            {/* Right side: Illustration with laptop, headphones, and AI robot */}
-            <div className="relative w-full md:w-[480px] h-[280px] bg-slate-950/80 rounded-2xl border border-slate-800 p-4 shadow-inner flex flex-col justify-between">
+            {/* Right side: Laptop, Robot & Phone Graphic */}
+            <div className="relative w-full md:w-[540px] h-[320px] flex items-center justify-center">
               
-              {/* Top part of the laptop screen */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
+              {/* Floating AI Robot Head */}
+              <div className="absolute -top-6 left-12 z-20 flex items-center gap-3">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-b from-blue-400 via-indigo-600 to-blue-900 p-0.5 shadow-[0_0_30px_rgba(59,130,246,0.6)] flex items-center justify-center animate-bounce">
+                  <div className="w-full h-full rounded-full bg-[#0a1128] flex items-center justify-center relative">
+                    <div className="flex gap-2">
+                      <div className="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]"></div>
+                      <div className="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]"></div>
+                    </div>
+                  </div>
                 </div>
-                {/* AI Bubble top right */}
-                <div className="px-3 py-1.5 rounded-xl bg-gradient-to-r from-blue-600 to-fuchsia-600 text-white text-xs font-semibold shadow-lg flex items-center gap-1">
+
+                <div className="px-4 py-2 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold shadow-lg border border-blue-400/30 whitespace-nowrap">
                   Better Deals Smarter Shopping With AI ✨
                 </div>
               </div>
 
-              {/* Product card (Headphones) inside the laptop */}
-              <div className="relative bg-slate-900/90 rounded-xl p-4 border border-slate-700/60 flex items-center gap-4 my-auto">
-                <div className="absolute top-2 left-3 text-[10px] text-slate-400 font-medium">Best Deal</div>
-                <div className="absolute top-2 right-2 px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-bold">Save 42%</div>
-                
-                {/* Headphones icon */}
-                <div className="w-16 h-16 rounded-lg bg-slate-800 flex items-center justify-center text-3xl shadow-md">
-                  🎧
-                </div>
-                
-                <div>
-                  <h3 className="text-white font-bold text-sm">Premium Headphones</h3>
-                  <p className="text-slate-500 text-xs line-through">$149.99</p>
-                  <p className="text-cyan-400 font-extrabold text-lg">$89.99</p>
+              {/* Laptop Mockup */}
+              <div className="absolute left-0 bottom-0 w-[340px] h-[210px] bg-[#0b1329] rounded-t-2xl border border-blue-500/40 p-3 shadow-2xl z-10">
+                <div className="w-full h-full bg-[#040816] rounded-xl p-3 flex flex-col justify-between">
+                  <div className="flex items-center justify-between">
+                    <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-bold">Best Deal</span>
+                    <span className="text-[10px] text-slate-400">Save 42%</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-lg bg-slate-900 flex items-center justify-center text-xl">🎧</div>
+                    <div>
+                      <p className="text-white text-xs font-bold">Premium Headphones</p>
+                      <div className="flex items-center gap-2 mt-1">
+                        <span className="text-cyan-400 text-sm font-extrabold">$89.99</span>
+                        <span className="text-slate-500 text-[11px] line-through">$149.99</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Floating AI Robot icon in the corner */}
-              <div className="absolute -bottom-4 -left-4 w-14 h-14 rounded-full bg-gradient-to-tr from-cyan-500 to-indigo-600 p-0.5 shadow-xl flex items-center justify-center animate-bounce">
-                <div className="w-full h-full rounded-full bg-slate-950 flex items-center justify-center text-2xl">
-                  🤖
+              {/* Mobile Phone Mockup */}
+              <div className="absolute right-2 bottom-0 w-[140px] h-[240px] bg-[#0a1128] rounded-2xl border border-blue-500/40 p-2 shadow-2xl z-20 flex flex-col gap-2">
+                <div className="w-full flex justify-center py-1">
+                  <div className="w-10 h-1 bg-slate-700 rounded-full"></div>
+                </div>
+                <div className="flex-1 space-y-1.5 flex flex-col justify-center">
+                  <div className="p-2 rounded-xl bg-blue-600/30 border border-blue-500/30 text-[10px] text-white font-semibold flex items-center gap-1.5">
+                    <span>🔔</span> Price Alerts
+                  </div>
+                  <div className="p-2 rounded-xl bg-slate-900/80 border border-slate-800 text-[10px] text-slate-300 font-semibold flex items-center gap-1.5">
+                    <span>📊</span> Track Prices
+                  </div>
+                  <div className="p-2 rounded-xl bg-slate-900/80 border border-slate-800 text-[10px] text-slate-300 font-semibold flex items-center gap-1.5">
+                    <span>🔍</span> Find Deals
+                  </div>
+                  <div className="p-2 rounded-xl bg-slate-900/80 border border-slate-800 text-[10px] text-slate-300 font-semibold flex items-center gap-1.5">
+                    <span>💾</span> Save Money
+                  </div>
                 </div>
               </div>
+
             </div>
+
           </div>
         </section>
 
         {/* STORE BAR */}
         <section className="max-w-[1500px] mx-auto px-5 md:px-8 mb-10">
           <div className="store-wrapper">
-
             <button
               type="button"
               onClick={() => scrollStores('left')}
@@ -559,24 +520,15 @@ export default function Home() {
             >
               ←
             </button>
-
-            <div
-              ref={storesScrollRef}
-              id="stores-scroll"
-              className="stores-scroll"
-            >
+            <div ref={storesScrollRef} className="stores-scroll">
               <div className="stores-inner">
                 {stores.map((store) => (
                   <button
                     type="button"
                     key={store}
-                    onClick={() =>
-                      setSelectedStore(store)
-                    }
+                    onClick={() => setSelectedStore(store)}
                     className={`store-button ${
-                      selectedStore === store
-                        ? 'store-active'
-                        : ''
+                      selectedStore === store ? 'store-active' : ''
                     }`}
                   >
                     {store === 'All' ? (
@@ -591,7 +543,6 @@ export default function Home() {
                 ))}
               </div>
             </div>
-
             <button
               type="button"
               onClick={() => scrollStores('right')}
@@ -600,29 +551,21 @@ export default function Home() {
             >
               →
             </button>
-
           </div>
         </section>
 
         {/* NEWSLETTER */}
         <section className="max-w-[1500px] mx-auto px-5 md:px-8 mb-12">
           <div className="newsletter">
-
-            <div className="newsletter-icon">
-              ✉
-            </div>
-
+            <div className="newsletter-icon">✉</div>
             <div className="flex-1">
               <h3 className="text-xl md:text-2xl font-black">
                 Get Weekly Top Deals Directly in Your Inbox
               </h3>
-
               <p className="text-slate-400 text-sm mt-2">
-                Never miss price drops, exclusive finds,
-                and hand-picked product specials.
+                Never miss price drops, exclusive finds, and hand-picked product specials.
               </p>
             </div>
-
             <form
               onSubmit={handleSubscribe}
               className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto"
@@ -631,13 +574,10 @@ export default function Home() {
                 type="email"
                 required
                 value={email}
-                onChange={(e) =>
-                  setEmail(e.target.value)
-                }
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email address"
                 className="flex-1 lg:w-80 px-5 py-3.5 rounded-xl bg-slate-950 border border-slate-700 outline-none focus:border-indigo-500"
               />
-
               <button
                 type="submit"
                 className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-500 to-fuchsia-600 font-bold"
@@ -648,92 +588,59 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CATEGORIES */}
+        {/* CATEGories */}
         <section className="max-w-[1500px] mx-auto px-5 md:px-8 mb-14">
-
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl md:text-3xl font-black">
-              <span className="text-blue-400">
-                ▦
-              </span>{' '}
-              Shop by Category
+              <span className="text-blue-400">▦</span> Shop by Category
             </h2>
-
-            <span className="text-sm text-slate-400">
-              40+ Categories
-            </span>
+            <span className="text-sm text-slate-400">40+ Categories</span>
           </div>
 
           <div className="hidden md:flex items-center gap-3">
-
             <button
               type="button"
-              onClick={() =>
-                scrollCategories('left')
-              }
+              onClick={() => scrollCategories('left')}
               className="scroll-arrow"
               aria-label="Scroll categories left"
             >
               ←
             </button>
-
-            <div
-              ref={categoriesScrollRef}
-              id="categories-scroll"
-              className="categories-scroll"
-            >
+            <div ref={categoriesScrollRef} className="categories-scroll">
               <div className="categories-inner">
                 {categories.map((category) => (
                   <button
                     type="button"
                     key={category}
-                    onClick={() =>
-                      setSelectedCategory(category)
-                    }
+                    onClick={() => setSelectedCategory(category)}
                     className={`category-button ${
-                      selectedCategory === category
-                        ? 'category-active'
-                        : ''
+                      selectedCategory === category ? 'category-active' : ''
                     }`}
                   >
-                    <span className="category-icon">
-                      {categoryIcon(category)}
-                    </span>
-
-                    <span>
-                      {category}
-                    </span>
+                    <span className="category-icon">{categoryIcon(category)}</span>
+                    <span>{category}</span>
                   </button>
                 ))}
               </div>
             </div>
-
             <button
               type="button"
-              onClick={() =>
-                scrollCategories('right')
-              }
+              onClick={() => scrollCategories('right')}
               className="scroll-arrow"
               aria-label="Scroll categories right"
             >
               →
             </button>
-
           </div>
 
           <div className="md:hidden">
             <select
               value={selectedCategory}
-              onChange={(e) =>
-                setSelectedCategory(e.target.value)
-              }
+              onChange={(e) => setSelectedCategory(e.target.value)}
               className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700"
             >
               {categories.map((category) => (
-                <option
-                  key={category}
-                  value={category}
-                >
+                <option key={category} value={category}>
                   {category}
                 </option>
               ))}
@@ -743,12 +650,8 @@ export default function Home() {
 
         {/* PRODUCTS */}
         <section className="max-w-[1500px] mx-auto px-5 md:px-8 pb-24">
-
           <div className="flex items-center justify-between mb-7">
-            <h2 className="text-2xl md:text-3xl font-black">
-              🔥 Featured Deals
-            </h2>
-
+            <h2 className="text-2xl md:text-3xl font-black">🔥 Featured Deals</h2>
             <span className="text-blue-400 text-sm font-bold">
               {filteredProducts.length} Products
             </span>
@@ -756,53 +659,28 @@ export default function Home() {
 
           {loading ? (
             <div className="empty-box">
-              <div className="text-5xl animate-pulse">
-                ⚡
-              </div>
-
-              <p className="mt-4 font-bold">
-                Loading deals...
-              </p>
+              <div className="text-5xl animate-pulse">⚡</div>
+              <p className="mt-4 font-bold">Loading deals...</p>
             </div>
           ) : loadError ? (
             <div className="empty-box">
-              <div className="text-5xl">
-                ⚠️
-              </div>
-
-              <p className="mt-4 text-xl font-bold">
-                Couldn't load deals
-              </p>
-
+              <div className="text-5xl">⚠️</div>
+              <p className="mt-4 text-xl font-bold">Couldn't load deals</p>
               <p className="text-slate-400 mt-2">
-                Something went wrong reaching the product feed. Please try
-                refreshing the page.
+                Something went wrong reaching the product feed. Please try refreshing the page.
               </p>
             </div>
           ) : filteredProducts.length === 0 ? (
             <div className="empty-box">
-              <div className="text-5xl">
-                🔎
-              </div>
-
-              <p className="mt-4 text-xl font-bold">
-                No products found
-              </p>
-
-              <p className="text-slate-400 mt-2">
-                Try another category, store or search.
-              </p>
+              <div className="text-5xl">🔎</div>
+              <p className="mt-4 text-xl font-bold">No products found</p>
+              <p className="text-slate-400 mt-2">Try another category, store or search.</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-
               {filteredProducts.map((product) => (
-                <article
-                  key={product.id}
-                  className="product-card"
-                >
+                <article key={product.id} className="product-card">
                   <div className="product-image">
-
                     {product.image_url ? (
                       <img
                         src={product.image_url}
@@ -810,77 +688,43 @@ export default function Home() {
                         className="w-full h-full object-contain"
                       />
                     ) : (
-                      <span className="text-6xl">
-                        🛍️
-                      </span>
+                      <span className="text-6xl">🛍️</span>
                     )}
-
-                    <span className="product-store">
-                      {product.store}
-                    </span>
-
+                    <span className="product-store">{product.store}</span>
                     {product.badge && (
-                      <span className="product-badge">
-                        {product.badge}
-                      </span>
+                      <span className="product-badge">{product.badge}</span>
                     )}
                   </div>
-
                   <div className="p-6">
-
-                    <p className="text-xs text-slate-500 mb-2">
-                      {product.category}
-                    </p>
-
+                    <p className="text-xs text-slate-500 mb-2">{product.category}</p>
                     <h3 className="font-black text-lg line-clamp-2 min-h-[56px]">
                       {product.title}
                     </h3>
-
                     <p className="text-slate-400 text-sm mt-2 line-clamp-2">
                       {product.description}
                     </p>
-
                     <div className="flex items-end justify-between mt-6">
-
                       <div>
                         <div className="text-3xl font-black gradient-text">
                           ${product.price.toFixed(2)}
                         </div>
-
                         <div className="text-xs text-slate-500 line-through">
-                          $
-                          {(product.price * 1.3).toFixed(
-                            2
-                          )}
+                          ${(product.price * 1.3).toFixed(2)}
                         </div>
                       </div>
-
-                      <span className="deal-badge">
-                        DEAL
-                      </span>
+                      <span className="deal-badge">DEAL</span>
                     </div>
-
                     <div className="flex gap-2 mt-6">
-
                       <button
                         type="button"
-                        onClick={() =>
-                          handleBuyNow(
-                            product.affiliate_url
-                          )
-                        }
+                        onClick={() => handleBuyNow(product.affiliate_url)}
                         className="flex-1 py-3.5 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 font-bold text-sm hover:opacity-90 transition"
                       >
                         Buy Now
                       </button>
-
                       <button
                         type="button"
-                        onClick={() =>
-                          handleSetAlert(
-                            product.title
-                          )
-                        }
+                        onClick={() => handleSetAlert(product.title)}
                         className="w-14 px-4 rounded-xl bg-slate-800 border border-slate-700 hover:border-indigo-500 transition"
                         aria-label="Set price alert"
                       >
@@ -896,26 +740,18 @@ export default function Home() {
 
         {/* FOOTER */}
         <footer className="border-t border-white/10 py-12 bg-slate-950">
-
           <div className="max-w-[1500px] mx-auto px-5 md:px-8 flex flex-col md:flex-row justify-between gap-5">
-
             <div>
               <div className="text-2xl font-black">
-                SmartPick{' '}
-                <span className="gradient-text">
-                  Pro
-                </span>
+                SmartPick <span className="gradient-text">Pro</span>
               </div>
-
               <p className="text-slate-500 text-sm mt-2">
                 AI-powered global deal discovery.
               </p>
             </div>
-
             <p className="text-slate-600 text-sm">
               © 2026 SmartPick Pro. All rights reserved.
             </p>
-
           </div>
         </footer>
       </div>
@@ -923,31 +759,19 @@ export default function Home() {
       {/* AI SHOPPER */}
       {isChatOpen && (
         <div className="fixed bottom-5 right-5 z-[100] w-[calc(100%-2.5rem)] sm:w-[420px] max-h-[72vh] rounded-3xl overflow-hidden border border-indigo-500/40 bg-slate-950 shadow-2xl shadow-black/50">
-
           <div className="px-5 py-4 bg-gradient-to-r from-indigo-950 to-fuchsia-950 border-b border-slate-800 flex justify-between items-center">
-
             <div className="flex items-center gap-3">
-
               <div className="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500 to-fuchsia-600 flex items-center justify-center text-xl">
                 🤖
               </div>
-
               <div>
-                <h3 className="font-black">
-                  AI Shopper
-                </h3>
-
-                <p className="text-xs text-emerald-400">
-                  ● Online
-                </p>
+                <h3 className="font-black">AI Shopper</h3>
+                <p className="text-xs text-emerald-400">● Online</p>
               </div>
             </div>
-
             <button
               type="button"
-              onClick={() =>
-                setIsChatOpen(false)
-              }
+              onClick={() => setIsChatOpen(false)}
               className="text-slate-400 hover:text-white text-xl"
               aria-label="Close AI Shopper"
             >
@@ -956,44 +780,31 @@ export default function Home() {
           </div>
 
           <div className="max-h-[50vh] overflow-y-auto p-4 space-y-3">
-
-            {chatMessages.map(
-              (message, index) => (
+            {chatMessages.map((message, index) => (
+              <div
+                key={index}
+                className={`flex ${
+                  message.role === 'user' ? 'justify-end' : 'justify-start'
+                }`}
+              >
                 <div
-                  key={index}
-                  className={`flex ${
-                    message.role === 'user'
-                      ? 'justify-end'
-                      : 'justify-start'
+                  className={`max-w-[85%] px-4 py-3 rounded-2xl text-sm whitespace-pre-line ${
+                    message.role === 'user' ? 'bg-indigo-600' : 'bg-slate-800'
                   }`}
                 >
-                  <div
-                    className={`max-w-[85%] px-4 py-3 rounded-2xl text-sm whitespace-pre-line ${
-                      message.role === 'user'
-                        ? 'bg-indigo-600'
-                        : 'bg-slate-800'
-                    }`}
-                  >
-                    {message.text}
-                  </div>
+                  {message.text}
                 </div>
-              )
-            )}
+              </div>
+            ))}
           </div>
 
-          <form
-            onSubmit={handleSendChat}
-            className="p-3 border-t border-slate-800 flex gap-2"
-          >
+          <form onSubmit={handleSendChat} className="p-3 border-t border-slate-800 flex gap-2">
             <input
               value={chatInput}
-              onChange={(e) =>
-                setChatInput(e.target.value)
-              }
+              onChange={(e) => setChatInput(e.target.value)}
               placeholder="What are you looking for?"
               className="flex-1 px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 outline-none focus:border-indigo-500"
             />
-
             <button
               type="submit"
               className="px-4 rounded-xl bg-gradient-to-r from-blue-500 to-fuchsia-600 font-bold"
@@ -1028,18 +839,11 @@ export default function Home() {
         }
 
         .gradient-text {
-          background: linear-gradient(
-            90deg,
-            #38bdf8,
-            #6366f1,
-            #d946ef
-          );
+          background: linear-gradient(90deg, #38bdf8, #6366f1, #d946ef);
           -webkit-background-clip: text;
           background-clip: text;
           color: transparent;
         }
-
-        /* STORE BAR */
 
         .store-wrapper {
           width: 100%;
@@ -1085,10 +889,6 @@ export default function Home() {
           border: 3px solid #0f172a;
         }
 
-        .stores-scroll::-webkit-scrollbar-thumb:hover {
-          background: #818cf8;
-        }
-
         .stores-inner {
           display: flex;
           gap: 12px;
@@ -1119,11 +919,7 @@ export default function Home() {
         }
 
         .store-active {
-          background: linear-gradient(
-            135deg,
-            #4f46e5,
-            #c026d3
-          );
+          background: linear-gradient(135deg, #4f46e5, #c026d3);
           border-color: #a855f7;
           color: white;
           box-shadow: 0 0 25px rgba(139, 92, 246, 0.3);
@@ -1138,8 +934,6 @@ export default function Home() {
         .store-name {
           font-size: 13px;
         }
-
-        /* STYLIZED STORE LOGO IMITATIONS */
 
         .logo-amazon {
           position: relative;
@@ -1271,8 +1065,6 @@ export default function Home() {
           transform: scale(1.05);
         }
 
-        /* NEWSLETTER */
-
         .newsletter {
           display: flex;
           align-items: center;
@@ -1280,11 +1072,7 @@ export default function Home() {
           padding: 27px;
           border: 1px solid rgba(59, 130, 246, 0.35);
           border-radius: 20px;
-          background: linear-gradient(
-            90deg,
-            #091b45,
-            #101a45
-          );
+          background: linear-gradient(90deg, #091b45, #101a45);
           box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
         }
 
@@ -1296,15 +1084,9 @@ export default function Home() {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: linear-gradient(
-            135deg,
-            #3b82f6,
-            #d946ef
-          );
+          background: linear-gradient(135deg, #3b82f6, #d946ef);
           font-size: 25px;
         }
-
-        /* CATEGORIES */
 
         .categories-scroll {
           flex: 1;
@@ -1331,14 +1113,6 @@ export default function Home() {
           background: #6366f1;
           border-radius: 999px;
           border: 3px solid #0f172a;
-        }
-
-        .categories-scroll::-webkit-scrollbar-thumb:hover {
-          background: #818cf8;
-        }
-
-        .categories-scroll::-webkit-scrollbar-thumb:active {
-          background: #a5b4fc;
         }
 
         .categories-inner {
@@ -1371,11 +1145,7 @@ export default function Home() {
         }
 
         .category-active {
-          background: linear-gradient(
-            145deg,
-            #4f46e5,
-            #7c3aed
-          );
+          background: linear-gradient(145deg, #4f46e5, #7c3aed);
           color: white;
           border-color: #818cf8;
           box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
@@ -1405,8 +1175,6 @@ export default function Home() {
           line-height: 1.15;
           padding: 0 6px;
         }
-
-        /* PRODUCTS */
 
         .product-card {
           overflow: hidden;
@@ -1479,30 +1247,6 @@ export default function Home() {
           border: 1px solid #1e293b;
           background: #08111f;
           text-align: center;
-        }
-
-        @media (max-width: 900px) {
-          .newsletter {
-            flex-direction: column;
-            align-items: stretch;
-          }
-        }
-
-        @media (max-width: 640px) {
-          .store-wrapper {
-            padding: 10px;
-          }
-
-          .store-button {
-            min-width: 135px;
-            height: 58px;
-          }
-
-          .scroll-arrow {
-            width: 38px;
-            height: 38px;
-            font-size: 18px;
-          }
         }
       `}</style>
     </main>
