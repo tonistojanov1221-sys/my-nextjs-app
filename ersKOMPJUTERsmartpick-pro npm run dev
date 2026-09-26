@@ -1,0 +1,32 @@
+[33m9aa674b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m update code
+[33m8e035a1[m Fix supabase env check
+[33m55e2e04[m Store bar redesign
+[33m12077a5[m Fix: horizontal scroll, hero layout, i celosen redesign
+[33m8754518[m 'Fix categories scroll and store logos'
+[33mc4c750c[m Update page with exact hero image mockup
+[33m5b3155b[m Update store logos to original SVG designs
+[33mbe023d5[m Final professional design with mockup HERO card
+[33m76509dd[m Fix store logos with colors
+[33m929b5d5[m Professional design improvements
+[33md3c9ddb[m Clean store bar design
+[33m011ab0a[m New SmartPick Pro premium design
+[33m2194a14[m Add new stores with navigation arrows
+[33me3a6dba[m Add Banggood, CJ Affiliate and Awin stores
+[33m7649911[m Fix categories with navigation arrows
+[33mee80a1f[m Use mock data instead of Supabase
+[33m95f4727[m Improve design with animations and gradients
+[33m34fc642[m Add responsive design for mobile and desktop
+[33m4082408[m Add .vercelignore to exclude supabase from build
+[33m4aad622[m fix: exclude supabase directory from tsconfig
+[33mde9b7f8[m Remove conflicting page.tsx from api/products
+[33m56018d5[m Update homepage with 40+ categories
+[33mcfbbc70[m Improve products page with filters and search
+[33m5e1cca4[m Add price history and alerts tracking
+[33mb1ea922[m Update to real products with web scraping
+[33me6b89f7[m Update auto-sync workflow with correct keys
+[33m4eebfae[m fix: remove strict apiVersion to resolve TS error in stripe
+[33m167f576[m remove deno functions from project temporarily
+[33mbb2f0d6[m move deno functions to supabase-edge-functions
+[33mf957024[m fix: correct supabase import path
+[33m5a40056[m Add SmartPick Pro code with Supabase integration
+[33m7734adf[m Initial commit from Create Next App
